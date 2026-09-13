@@ -4,16 +4,17 @@ unittest keeps these tests runnable when optional project dependencies are
 absent; pytest also collects them in the normal project suite.
 """
 
+import unittest
 from copy import deepcopy
 from types import SimpleNamespace
-import unittest
 
 from ai_service.generation.narrative_validation import (
     NarrativeCategory as Category,
+)
+from ai_service.generation.narrative_validation import (
     classify_narrative,
     validate_narrative,
 )
-
 
 ELIGIBLE = [
     "Apple's 2024 10-K discusses supply-chain risks.",

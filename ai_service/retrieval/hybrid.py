@@ -682,7 +682,7 @@ class HybridRetriever:
         # C) Prevent wrong-section being sole evidence when relevant section exists
         # Check ranked (not just eligible) for relevant existence, then filter Front matter from eligible
         # This handles case where relevant exists but below threshold, we still want to avoid Front matter sole evidence
-        for idx, (eligible_group, ranked_group) in enumerate(zip(eligible, ranked)):
+        for idx, (eligible_group, ranked_group) in enumerate(zip(eligible, ranked, strict=True)):
             if not eligible_group:
                 continue
             # Check if any relevant section exists in ranked (broader than eligible)

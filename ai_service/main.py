@@ -1,7 +1,6 @@
 """Private AI transport with correlated requests and local readiness."""
 
 import logging
-import time
 from contextlib import asynccontextmanager
 from threading import Lock
 
