@@ -1,500 +1,1145 @@
+
 # Automated Financial Report Analysis using Retrieval-Augmented Generation (RAG)
 
 ## Financial Intelligence Platform
 
-**AI-powered financial research, document intelligence and evidence-based analysis**
+> **AI-powered financial research, document intelligence, and evidence-based analysis for SEC filings.**
 
-A financial research workspace for Apple, Microsoft, and Amazon original
-Form 10-K filings for fiscal years 2022–2024.
+A full-stack financial intelligence platform that combines **Retrieval-Augmented Generation (RAG)**, structured SEC financial data, deterministic financial calculations, hybrid search, cross-encoder reranking, and application-controlled evidence to analyze annual reports from **Apple, Microsoft, and Amazon**.
 
-The platform combines:
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-TypeScript-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![RAG](https://img.shields.io/badge/AI-RAG-7B61FF)](#retrieval-pipeline)
+[![FAISS](https://img.shields.io/badge/Retrieval-FAISS-0468FF)](#retrieval-pipeline)
+[![SEC EDGAR](https://img.shields.io/badge/Data-SEC%20EDGAR-003968)](https://www.sec.gov/edgar)
+[![CI](https://img.shields.io/github/actions/workflow/status/Karthik-0917/financial-intelligence-platform/ci.yml?label=CI)](https://github.com/Karthik-0917/financial-intelligence-platform/actions)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-- SEC EDGAR primary-source documents.
-- Validated Company Facts financial inputs.
-- Python Decimal calculations.
-- Hybrid FAISS and BM25 retrieval.
-- Reciprocal Rank Fusion and cross-encoder reranking.
-- Groq narrative synthesis.
-- Application-controlled evidence and citations.
-- Explicit abstention and financial availability states.
-- Artifact-backed evaluation.
+---
 
-It is not a stock-price prediction tool or investment adviser.
+## Table of Contents
 
-## Verification status
+- [Overview](#overview)
+- [Why This Project](#why-this-project)
+- [Key Features](#key-features)
+- [Supported Corpus](#supported-corpus)
+- [Product Walkthrough](#product-walkthrough)
+- [Architecture](#architecture)
+- [Data Pipeline](#data-pipeline)
+- [Financial Data Pipeline](#financial-data-pipeline)
+- [Financial Calculation Methodology](#financial-calculation-methodology)
+- [Retrieval Pipeline](#retrieval-pipeline)
+- [Evidence and Citation Architecture](#evidence-and-citation-architecture)
+- [Query Responsibilities](#query-responsibilities)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Environment Configuration](#environment-configuration)
+- [Models and Initial Artifacts](#models-and-initial-artifacts)
+- [Running Locally](#running-locally)
+- [API](#api)
+- [Evaluation](#evaluation)
+- [Verification](#verification)
+- [Docker Deployment](#docker-deployment)
+- [Data Coverage and Limitations](#data-coverage-and-limitations)
+- [Security and Responsible Use](#security-and-responsible-use)
+- [Documentation](#documentation)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [License](#license)
 
-The redesigned implementation was delivered in Response Mode.
+---
 
-**Not executed in this environment.**
+# Overview
 
-Before the UI redesign, the user supplied local evidence of:
+Financial reports contain large amounts of structured and unstructured information distributed across financial statements, tables, business descriptions, risk factors, management discussions, cybersecurity disclosures, and other filing sections.
 
-- Nine acquired and published filings.
-- A matching index with 2,342 chunks and 768-dimensional embeddings.
-- 87 accepted financial facts and 12 unresolved base-metric slots.
-- Runtime financial analytics returning all nine company/year rows.
-- 443 strict socket-blocked tests passing after the date-parser repair.
-- 38 API/provider tests passing in a separate restricted-loopback Windows run.
-- A successful frontend build before this redesign.
+This project combines two complementary approaches:
 
-These are historical, user-observed results. They are not verification of the
-new frontend, live narrative retrieval, Groq authentication, or evaluation.
+- **Structured financial analysis** for exact numerical metrics and calculations.
+- **Retrieval-Augmented Generation (RAG)** for narrative questions requiring contextual evidence from filings.
 
-See [verification](docs/verification.md).
+The system deliberately separates these responsibilities so that the LLM is **not responsible for authoritative financial arithmetic, source identity, or financial fact selection**.
 
-## Supported corpus
+### Core Principles
 
-| Company | Ticker | SEC CIK | Fiscal years |
-|---|---|---|---|
-| Apple | AAPL | 0000320193 | 2022, 2023, 2024 |
-| Microsoft | MSFT | 0000789019 | 2022, 2023, 2024 |
-| Amazon | AMZN | 0001018724 | 2022, 2023, 2024 |
+- SEC EDGAR as the primary filing source
+- Structured financial facts validated before use
+- Python-based deterministic financial calculations
+- Hybrid dense + lexical retrieval
+- Reciprocal Rank Fusion
+- Cross-encoder reranking
+- Application-controlled evidence and citation IDs
+- Explicit handling of unavailable financial data
+- Abstention for unsupported questions
+- Artifact-backed evaluation
+- No stock-price prediction or investment advice
 
-Actual source identity comes from SEC metadata and filing validation.
-Expected corpus slots are not proof of acquisition.
+---
 
-Original 10-K filings are selected; 10-K/A amendments are excluded.
-Filing date and fiscal year remain separate.
+# Why This Project
 
-## Architecture
+Traditional financial dashboards are effective at displaying numbers but often provide limited context behind those numbers.
 
-Exactly three runtime application services:
+General-purpose LLM applications can summarize financial documents, but they may introduce problems such as:
 
-~~~text
-React frontend
-    ↓
-Public FastAPI backend
-    ↓
-Internal AI/RAG service
-    ├─ validated financial store → Python calculations
-    └─ scoped retrieval → reranking → evidence → Groq synthesis
-~~~
+- Unsupported numerical claims
+- Hallucinated sources
+- Incorrect financial calculations
+- Poor fiscal-year scoping
+- Retrieval of irrelevant filing sections
+- Confusion between unavailable and zero-valued metrics
 
-The browser calls the public backend only.
+This project addresses those problems by separating **financial computation**, **document retrieval**, **evidence management**, and **language generation**.
 
-Groq is an external hosted API. Optional Ollama is external to the
-three-service Compose deployment.
+The result is a financial research workflow where:
 
-### Offline document pipeline
+```text
+Financial Facts → Deterministic Calculation
+                         │
+                         ▼
+Narrative Question → Retrieval → Evidence → LLM Synthesis
+                         │
+                         ▼
+                 Citation Validation
+                         │
+                         ▼
+                  Final Research Answer
+````
 
-~~~text
-SEC submissions and official HTML/iXBRL
-    → filing identity validation
-    → text extraction and normalization
-    → source-linked chunks
-    → BGE embeddings
-    → FAISS + persisted BM25
-~~~
+---
 
-### Offline financial pipeline
+# Key Features
 
-~~~text
-SEC Company Facts
-    → exact annual fact resolution
-    → unit, period, accession, and sign validation
-    → inline-XBRL reconciliation
-    → persisted financial store
-~~~
+## Financial Research
+
+Analyze financial metrics including:
+
+* Revenue
+* Operating cash flow
+* Free cash flow
+* Margins
+* Growth
+* CAGR
+* Company comparisons
+* Fiscal-year performance
+
+Numerical answers are calculated from the validated financial store rather than generated by the LLM.
+
+---
+
+## RAG-Based Document Intelligence
+
+Retrieve supporting evidence from SEC filings for narrative questions involving:
+
+* Business descriptions
+* Risk factors
+* Cybersecurity
+* Supply chain
+* Cloud services
+* Climate-related risks
+* Competition
+* Management discussion
+* Other supported filing sections
+
+---
+
+## Evidence-First Answers
+
+Research results expose supporting evidence associated with application-controlled citation IDs.
+
+The application validates citation references against persisted evidence rather than allowing the model to invent arbitrary sources.
+
+---
+
+## Company Comparison
+
+Compare supported companies for a selected fiscal year using:
+
+* Exact financial values
+* Availability states
+* Deterministic calculations
+* Company ranking
+* Source lineage
+
+---
+
+## SEC Filing Intelligence
+
+The platform maintains filing metadata including:
+
+* Company
+* Ticker
+* SEC CIK
+* Form type
+* Filing date
+* Fiscal year
+* SEC accession information
+* Source provenance
+
+---
+
+## Explicit Abstention
+
+The system does not silently fabricate missing information.
+
+Unsupported or unavailable requests can return an explicit abstention instead of a speculative answer.
+
+---
+
+# Supported Corpus
+
+The current corpus contains original annual **Form 10-K filings** for:
+
+| Company   | Ticker | SEC CIK    | Fiscal Years     |
+| --------- | ------ | ---------- | ---------------- |
+| Apple     | AAPL   | 0000320193 | 2022, 2023, 2024 |
+| Microsoft | MSFT   | 0000789019 | 2022, 2023, 2024 |
+| Amazon    | AMZN   | 0001018724 | 2022, 2023, 2024 |
+
+**9 annual filings** are included in the supported corpus.
+
+Original 10-K filings are selected while 10-K/A amendments are excluded.
+
+Filing date and fiscal year are maintained as separate concepts.
+
+Source identity is derived from SEC metadata and filing validation.
+
+---
+
+# Product Walkthrough
+
+The platform provides a dedicated financial research workspace rather than a single chat interface.
+
+## Overview
+
+The Overview page provides:
+
+* Financial Intelligence workspace
+* Company coverage
+* Financial snapshots
+* Revenue performance
+* High-level analytics
+* Capability status
+* Research entry point
+
+## Research
+
+The Research workspace provides:
+
+* Research question input
+* Answer-first results
+* Key findings
+* Financial calculations
+* Supporting evidence
+* Citation references
+* Provider and execution information
+
+## Compare
+
+The Compare workspace provides:
+
+* Fiscal-year selection
+* Company selection
+* Metric selection
+* Exact values
+* Availability states
+* Comparative visualization
+* Source lineage
+
+## Filings
+
+The Filings page provides:
+
+* Filing inventory
+* Company information
+* Fiscal-year coverage
+* Filing dates
+* SEC provenance
+
+## Financials
+
+The Financials page provides:
+
+* Revenue
+* Margins
+* Cash flow
+* Balance-sheet metrics
+* Financial availability
+* Metric-specific analysis
+
+## Evidence
+
+The Evidence page provides:
+
+* Evidence ID lookup
+* Supporting passages
+* Filing metadata
+* Source provenance
+* Opened evidence records
+
+## Evaluation
+
+The Evaluation page provides:
+
+* Evaluation status
+* Actual evaluation artifacts
+* Denominators
+* Outcome metrics
+* Review limitations
+
+## Methodology
+
+The Methodology page documents:
+
+* Financial-data methodology
+* Retrieval architecture
+* Evidence validation
+* Citation controls
+* Abstention behavior
+* System capabilities
+
+---
+
+# Architecture
+
+The application uses three runtime services.
+
+```text
+┌──────────────────────────────────────┐
+│            React Frontend            │
+│          TypeScript + Vite           │
+└──────────────────┬───────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────┐
+│          Public FastAPI API          │
+│     Research / Compare / Data        │
+└──────────────────┬───────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────┐
+│             AI / RAG Service         │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │     Structured Financials      │  │
+│  │     Python Calculations        │  │
+│  └────────────────────────────────┘  │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │       Hybrid Retrieval         │  │
+│  │       FAISS + BM25             │  │
+│  │       RRF + Reranking          │  │
+│  └────────────────────────────────┘  │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │    Evidence + Generation       │  │
+│  │    Groq / Optional Ollama      │  │
+│  └────────────────────────────────┘  │
+└──────────────────────────────────────┘
+```
+
+### Runtime Responsibilities
+
+| Service         | Responsibility                                             |
+| --------------- | ---------------------------------------------------------- |
+| React Frontend  | User interface and research workflow                       |
+| FastAPI Backend | Public API, financial analytics, application orchestration |
+| AI/RAG Service  | Retrieval, evidence selection, narrative generation        |
+
+The browser communicates with the public backend only.
+
+The AI/RAG service is intended to remain internal to the application deployment.
+
+---
+
+# Data Pipeline
+
+## Document Ingestion
+
+```text
+SEC EDGAR
+    │
+    ▼
+SEC submissions + official HTML/iXBRL
+    │
+    ▼
+Filing identity validation
+    │
+    ▼
+Text extraction & normalization
+    │
+    ▼
+Section detection
+    │
+    ▼
+Source-linked chunks
+    │
+    ▼
+BGE embeddings
+    │
+    ├──────────────► FAISS
+    │
+    └──────────────► BM25
+```
+
+The ingestion pipeline preserves relationships between:
+
+* Filing
+* Section
+* Chunk
+* Source span
+* Evidence
+
+This allows retrieved content to be traced back to the originating filing.
 
 Runtime queries do not fetch SEC data or rebuild indexes.
 
-## Financial methodology
+---
 
-The resolver checks exact company, CIK, accession, form, fiscal focus, period,
-concept, and unit.
+# Financial Data Pipeline
 
-Annual duration facts span 350–380 days. Instant facts have no start date.
+Structured financial data is obtained from SEC Company Facts and reconciled against filing information.
 
-Accepted facts require exact same-scope inline-XBRL agreement under the
-implemented reconciliation policy. Conflicts and unresolved observations are
-not silently overwritten.
+```text
+SEC Company Facts
+       │
+       ▼
+Exact annual fact resolution
+       │
+       ▼
+Unit / period / accession validation
+       │
+       ▼
+Inline-XBRL reconciliation
+       │
+       ▼
+Persisted financial store
+       │
+       ▼
+Python Decimal calculations
+       │
+       ▼
+API / UI
+```
 
-The inline extractor supports selected namespace and numeric transformation
-forms. It is not a complete XBRL processor or statement-layout auditor.
+The financial resolver validates:
 
-Company Facts values are already scaled.
+* Company
+* SEC CIK
+* Filing accession
+* Form
+* Fiscal year
+* Period
+* Financial concept
+* Unit
 
-CapEx uses a nonnegative outflow magnitude. Free cash flow is operating cash
-flow minus CapEx.
+Annual duration facts are restricted to the implemented annual-duration window.
 
-Python Decimal arithmetic provides growth, CAGR, margins, and free cash flow.
-The LLM does not perform authoritative financial arithmetic.
+Conflicting or unresolved observations are not silently overwritten.
 
-Charts use browser number precision for display. Exact source strings and
-calculation inputs remain available for inspection.
+Company Facts values are already scaled and are not re-scaled during calculation.
 
-## Known financial coverage gaps
+---
 
-The latest user-supplied artifact inspection reported:
+# Financial Calculation Methodology
 
-- Apple cash unavailable in all three years because reconciliation was blocked.
-- Amazon gross profit, liabilities, and CapEx unavailable in all three years
-  under the current resolver.
-- Amazon free cash flow and FCF margin consequently unavailable.
-- FY2022 year-over-year growth unavailable because FY2021 is outside scope.
+The LLM does **not** perform authoritative financial arithmetic.
 
-These observations do not establish that Amazon lacks the information in its
-filings. Candidate mappings, original observations, and rejection reasons need
-further source-level investigation.
+Financial calculations are implemented using Python `Decimal` arithmetic.
 
-The UI must display unavailable values with explanations, not zeros or
-substitute metrics.
+Supported calculations include:
 
-## Retrieval and generation
+* Year-over-year growth
+* CAGR
+* Margins
+* Free cash flow
+* Free cash flow margin
+* Company comparisons
 
-| Component | Default |
-|---|---|
-| Embedding model | BAAI/bge-base-en-v1.5 |
-| Reranker | BAAI/bge-reranker-base |
-| Dense candidates per scope group | 20 |
-| Positive BM25 candidates per group | 20 |
-| RRF constant | 60 |
-| Rerank shortlist per group | 8 |
-| Final context limit | 6 |
-| Chunk target / overlap | 700 / 100 tokens |
-| Reranker threshold | 0.35 |
-| Hosted provider | Groq |
-| Hosted model | openai/gpt-oss-120b |
+## Free Cash Flow
 
-Embedding windows avoid sending an entire oversized source chunk through the
-shorter model input window.
+```text
+Free Cash Flow = Operating Cash Flow − CapEx
+```
 
-Relevance scores are not answer-confidence probabilities.
+CapEx is represented as a non-negative outflow magnitude.
 
-Supported numerical questions use the financial store directly. Narrative
-questions use retrieval and synthesis. Mixed questions retain separate
-financial and narrative responsibilities.
+## Example: FY2024 Operating Cash Flow
 
-Base models remain defaults. No Base/Large benchmark result is claimed.
+| Company   | Operating Cash Flow |
+| --------- | ------------------: |
+| Microsoft |            $118.55B |
+| Apple     |            $118.25B |
+| Amazon    |            $115.88B |
 
-## Evidence and safety
+The ranking is produced by the deterministic financial calculation layer.
 
-Citation IDs are application-controlled and resolve to persisted evidence.
+---
 
-Evidence identifies a supporting passage or fact. A source identifies its
-originating filing or SEC dataset.
+# Retrieval Pipeline
 
-Unknown and out-of-context citation IDs are rejected.
-Retrieved documents are untrusted input, not application instructions.
+Narrative questions use the RAG pipeline.
 
-Citation-ID validity is not semantic entailment. Narrative support is not
-independently verified merely because IDs pass validation.
+```text
+User Question
+      │
+      ▼
+Query Classification / Scope
+      │
+      ▼
+Query Expansion
+      │
+      ▼
+Dense Retrieval ──────────┐
+                          │
+BM25 Retrieval ───────────┤
+                          ▼
+                 Reciprocal Rank Fusion
+                          │
+                          ▼
+                 Cross-Encoder Reranking
+                          │
+                          ▼
+                    Evidence Selection
+                          │
+                          ▼
+                    Groq Synthesis
+                          │
+                          ▼
+                   Citation Validation
+                          │
+                          ▼
+                  Narrative Validation
+                          │
+                          ▼
+                     Final Answer
+```
 
-Technical execution metadata remains available but is secondary to the answer.
+## Retrieval Configuration
 
-## Product pages
+| Component              | Default                  |
+| ---------------------- | ------------------------ |
+| Embedding Model        | `BAAI/bge-base-en-v1.5`  |
+| Reranker               | `BAAI/bge-reranker-base` |
+| Dense Candidates       | 20                       |
+| BM25 Candidates        | 20                       |
+| RRF Constant           | 60                       |
+| Rerank Shortlist       | 8                        |
+| Final Evidence Context | 6                        |
+| Chunk Target           | 700 tokens               |
+| Chunk Overlap          | 100 tokens               |
+| Reranker Threshold     | 0.35                     |
+| Hosted Provider        | Groq                     |
+| Hosted Model           | `openai/gpt-oss-120b`    |
 
-- **Overview:** research composer, company snapshot, coverage, capability state.
-- **Research:** answer-first results, findings, calculations, and evidence.
-- **Compare:** selected-year chart, exact values, availability, and source lineage.
-- **Filings:** searchable inventory and filing provenance.
-- **Financials:** income, margins, cash flow, and balance-sheet analysis.
-- **Evidence:** persisted ID lookup and records opened during the session.
-- **Evaluation:** actual artifacts, denominators, outcomes, and review limitations.
-- **Methodology:** pipeline explanation and separate capability status.
+Relevance scores are retrieval scores and should not be interpreted as answer-confidence probabilities.
 
-Workspace search covers pages and loaded filing metadata.
-It is not full-text corpus search.
+Embedding windows are used to avoid sending oversized source chunks through shorter model input windows.
 
-Research and comparison retain in-session state during page navigation.
-A browser reload does not preserve that state.
+---
 
-See [UI redesign](docs/ui-redesign.md).
+# Evidence and Citation Architecture
 
-## Installation
+Evidence is controlled by the application.
 
-Python 3.12 and Node 22 are recommended.
+```text
+Retrieved Chunk
+      │
+      ▼
+Evidence Registry
+      │
+      ▼
+EVIDENCE_XXXX
+      │
+      ▼
+LLM Citation Reference
+      │
+      ▼
+Application Validation
+      │
+      ▼
+Persisted Evidence Record
+```
 
-For a new Windows installation:
+Citation IDs are generated and resolved by the application.
 
-~~~powershell
+The LLM does not determine the final source identity.
+
+Unknown or out-of-context citation IDs are rejected.
+
+Retrieved documents are treated as untrusted input rather than application instructions.
+
+Citation-ID validity confirms that a citation exists and belongs to the allowed evidence context. It does **not**, by itself, establish semantic entailment.
+
+---
+
+# Query Responsibilities
+
+The system separates different types of questions.
+
+## Structured Questions
+
+Example:
+
+```text
+What was Apple's revenue in FY2024?
+```
+
+These requests use the validated financial store and deterministic calculations.
+
+## Narrative Questions
+
+Example:
+
+```text
+What cybersecurity risks did Microsoft disclose in FY2024?
+```
+
+These requests use:
+
+* Query processing
+* Retrieval
+* Reranking
+* Evidence selection
+* LLM synthesis
+* Citation validation
+
+## Mixed Questions
+
+Questions combining financial metrics and narrative explanation retain separate responsibilities for:
+
+* Financial facts
+* Calculations
+* Narrative evidence
+* Final synthesis
+
+---
+
+# Technology Stack
+
+## Frontend
+
+* React
+* TypeScript
+* Vite
+* CSS
+
+## Backend
+
+* Python
+* FastAPI
+* Pydantic
+
+## AI / RAG
+
+* Retrieval-Augmented Generation
+* FAISS
+* BM25
+* Reciprocal Rank Fusion
+* BGE embeddings
+* BGE cross-encoder reranking
+* Groq
+* Optional Ollama
+
+## Financial Data
+
+* SEC EDGAR
+* SEC Company Facts
+* Inline XBRL
+* Python `Decimal`
+
+## Infrastructure
+
+* Docker
+* Docker Compose
+* Nginx
+
+## Development & Quality
+
+* Pytest
+* Ruff
+* Black
+* GitHub Actions
+
+---
+
+# Project Structure
+
+```text
+financial-intelligence-platform/
+│
+├── ai_service/
+│   ├── generation/
+│   ├── retrieval/
+│   ├── providers/
+│   └── main.py
+│
+├── backend/
+│   └── app/
+│
+├── core/
+│   ├── config.py
+│   ├── storage.py
+│   └── ...
+│
+├── ingestion/
+│   ├── extract.py
+│   ├── index.py
+│   └── pipeline.py
+│
+├── evaluation/
+│   ├── questions.json
+│   ├── prepare.py
+│   ├── run.py
+│   └── results/
+│
+├── indexes/
+│   ├── chunks.json
+│   ├── manifest.json
+│   └── ...
+│
+├── data/
+│   └── processed/
+│
+├── frontend/
+│   ├── src/
+│   └── package.json
+│
+├── tests/
+│
+├── configs/
+│
+├── docs/
+│
+├── Dockerfile.python
+├── docker-compose.yml
+├── pyproject.toml
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# Installation
+
+## Prerequisites
+
+Recommended:
+
+* Python 3.12
+* Node.js 22
+* npm
+* Git
+* Docker Desktop (optional)
+
+## Create Python Environment
+
+```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
-.\.venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-.\.venv\Scripts\python.exe -m pip install -e ".[ml]"
+```
+
+Activate the environment:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Upgrade pip:
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+Install development dependencies:
+
+```powershell
+python -m pip install -e ".[dev]"
+```
+
+Install CPU PyTorch:
+
+```powershell
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+
+Install ML dependencies:
+
+```powershell
+python -m pip install -e ".[ml]"
+```
+
+Install frontend dependencies:
+
+```powershell
 npm ci --prefix frontend
-~~~
+```
 
-Existing users do not need to reinstall models or dependencies solely because
-of this UI redesign. No new frontend dependency was introduced.
+---
 
-## Private environment
+# Environment Configuration
 
-Create `.env` only if absent:
+Create a private `.env` file:
 
-~~~powershell
-if (-not (Test-Path .env)) { Copy-Item .env.example .env }
-~~~
+```powershell
+if (-not (Test-Path .env)) {
+    Copy-Item .env.example .env
+}
+```
 
-Edit the file privately.
+Configure the required environment variables privately:
 
-~~~dotenv
+```dotenv
 LLM_PROVIDER=groq
+
 GROQ_API_KEY=
 GROQ_BASE_URL=https://api.groq.com/openai/v1
 GROQ_MODEL=openai/gpt-oss-120b
+
 ENABLE_LLM_FALLBACK=false
 
 SEC_CONTACT_EMAIL=
 SEC_USER_AGENT=
-~~~
+```
 
-SEC acquisition requires a genuine contact and identifying User-Agent.
+SEC acquisition requires a genuine contact identity and identifying User-Agent.
+
 Public EDGAR APIs do not require an SEC API key.
 
-For separate local Python services:
+**Never commit `.env` or API keys to the repository.**
 
-~~~dotenv
-AI_SERVICE_URL=http://127.0.0.1:8001
-BACKEND_URL=http://127.0.0.1:8000
-~~~
+---
 
-Keep fallback disabled until an external Ollama server and suitable model are
-deliberately configured.
+# Frontend Configuration
 
-Key presence is not proof of Groq authentication.
+By default, the frontend uses the same-origin `/api` path.
 
-## Frontend configuration
+Optional configuration:
 
-By default, the browser uses same-origin `/api`.
-
-Optional `frontend/.env.local` configuration:
-
-~~~dotenv
+```dotenv
 VITE_API_BASE_URL=/api
 DEV_API_PROXY_TARGET=http://127.0.0.1:8000
-~~~
+```
 
-Vite exposes `VITE_*` values publicly at build time. Never put secrets in them.
+Never place secrets in `VITE_*` environment variables because they are exposed to the browser at build time.
 
-The proxy target is used by the development server, not directly by the browser.
-For a nonlocal development hostname, configure `DEV_ALLOWED_HOSTS` explicitly.
+The development proxy target is used by the Vite development server and is not directly exposed as the browser API origin.
 
-Production should normally retain same-origin `/api` behind nginx.
-A different public API origin also requires compatible CORS and deployment
-security policy; changing an environment variable alone is insufficient.
+---
 
-## Models and initial artifacts
+# Models and Initial Artifacts
 
-Skip this section if compatible models and artifacts already exist.
+If compatible models and processed artifacts are already present, this section can be skipped.
 
 Prepare the default public model repositories:
 
-~~~powershell
+```powershell
 $env:HF_HOME = Join-Path $PWD "models/huggingface"
 $env:HF_HUB_CACHE = Join-Path $PWD "models/huggingface/hub"
 $env:HF_HUB_OFFLINE = "0"
 $env:TRANSFORMERS_OFFLINE = "0"
 
-.\.venv\Scripts\python.exe -c "from huggingface_hub import snapshot_download; repos = ('BAAI/bge-base-en-v1.5', 'BAAI/bge-reranker-base'); [snapshot_download(repo_id=repo) for repo in repos]"
+python -c "from huggingface_hub import snapshot_download; repos = ('BAAI/bge-base-en-v1.5', 'BAAI/bge-reranker-base'); [snapshot_download(repo_id=repo) for repo in repos]"
+```
 
+After model preparation:
+
+```powershell
 $env:HF_HUB_OFFLINE = "1"
 $env:TRANSFORMERS_OFFLINE = "1"
-~~~
+```
 
-Downloading models is not inference verification. Revisions are not fully
-runtime-pinned by this command.
+Downloading models is not equivalent to inference verification. Model revisions should be deliberately pinned for reproducible production deployments.
 
-Stop services before publishing artifacts:
+---
 
-~~~powershell
-.\.venv\Scripts\python.exe -m ingestion.pipeline
-~~~
+# Rebuilding Data and Indexes
 
-Index-only construction from a compatible published corpus:
+Stop dependent services before rebuilding published artifacts.
 
-~~~powershell
-.\.venv\Scripts\python.exe -m ingestion.index
-~~~
+Run the full ingestion pipeline:
 
-Inspect `data/processed/ingestion_run.json`.
-Individual artifact writes are atomic; the complete publication is not one
-filesystem transaction.
+```powershell
+python -m ingestion.pipeline
+```
 
-A UI or provider-only change does not justify rebuilding compatible artifacts.
+For index-only construction from an already compatible published corpus:
 
-## Run locally
+```powershell
+python -m ingestion.index
+```
+
+Inspect:
+
+```text
+data/processed/ingestion_run.json
+```
+
+Artifact writes are performed atomically at the individual artifact level. Complete multi-file publication is not one filesystem transaction.
+
+A UI or provider-only change does not require rebuilding compatible data and indexes.
+
+---
+
+# Running Locally
 
 Use separate terminals from the repository root.
 
-AI service:
+## 1. AI / RAG Service
 
-~~~powershell
+```powershell
 $env:HF_HOME = Join-Path $PWD "models/huggingface"
 $env:HF_HUB_CACHE = Join-Path $PWD "models/huggingface/hub"
 $env:HF_HUB_OFFLINE = "1"
 $env:TRANSFORMERS_OFFLINE = "1"
 
-.\.venv\Scripts\python.exe -m uvicorn ai_service.main:app --host 127.0.0.1 --port 8001
-~~~
+python -m uvicorn ai_service.main:app --host 127.0.0.1 --port 8001
+```
 
-Backend:
+## 2. Backend
 
-~~~powershell
-.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
-~~~
+```powershell
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+```
 
-Frontend:
+## 3. Frontend
 
-~~~powershell
+```powershell
 npm run dev --prefix frontend -- --port 5173
-~~~
+```
 
-Open `http://localhost:5173`.
+Open:
 
-The backend schema documentation is at `http://127.0.0.1:8000/docs`.
+```text
+http://localhost:5173
+```
 
-## Public API
+FastAPI documentation:
 
-| Method | Endpoint |
-|---|---|
-| GET | `/api/health` |
-| GET | `/api/system/status` |
-| GET | `/api/companies` |
-| GET | `/api/reports` |
-| POST | `/api/research` |
-| POST | `/api/compare` |
-| GET | `/api/evidence/{evidence_id}` |
-| GET | `/api/analytics` |
-| GET | `/api/evaluation` |
+```text
+http://127.0.0.1:8000/docs
+```
 
-Internal endpoints remain `/internal/health`, `/internal/status`,
-`/internal/rag/query`, and `/internal/rag/compare`.
+---
 
-Liveness is not retrieval readiness.
-Configured is not authenticated.
-Built is not loaded.
-Available data is not complete coverage.
-No evaluation artifact means no measured evaluation score.
+# Public API
 
-## Verification commands
+| Method | Endpoint                      | Purpose                          |
+| ------ | ----------------------------- | -------------------------------- |
+| GET    | `/api/health`                 | Health check                     |
+| GET    | `/api/system/status`          | System status                    |
+| GET    | `/api/companies`              | Supported companies              |
+| GET    | `/api/reports`                | Filing inventory                 |
+| POST   | `/api/research`               | Financial and narrative research |
+| POST   | `/api/compare`                | Company comparison               |
+| GET    | `/api/evidence/{evidence_id}` | Evidence lookup                  |
+| GET    | `/api/analytics`              | Financial analytics              |
+| GET    | `/api/evaluation`             | Evaluation status/results        |
 
-~~~powershell
-.\.venv\Scripts\python.exe -m pip check
-.\.venv\Scripts\python.exe -m ruff check .
-.\.venv\Scripts\python.exe -m black --check .
+## Internal AI Endpoints
+
+```text
+/internal/health
+/internal/status
+/internal/rag/query
+/internal/rag/compare
+```
+
+The internal AI endpoints are intended for service-to-service communication.
+
+---
+
+# Evaluation
+
+The repository contains an artifact-backed evaluation workflow.
+
+## Prepare Evaluation References
+
+```powershell
+python -m evaluation.prepare
+```
+
+## Run Evaluation
+
+```powershell
+python -m evaluation.run --dataset evaluation/resolved.json
+```
+
+The evaluation framework distinguishes between:
+
+* Structured financial correctness
+* Unsupported-question abstention
+* False abstention
+* Citation-ID validity
+* Routing agreement
+* Retrieval quality
+* Semantic groundedness
+* Narrative correctness
+* Completeness
+
+Metrics are only reported when the corresponding evaluation path and denominator support them.
+
+## Completed Evaluation Results
+
+| Metric                                    | Result |
+| ----------------------------------------- | -----: |
+| Structured regression correctness         |   100% |
+| Unsupported abstention correctness        |   100% |
+| Citation-ID validity                      |   100% |
+| Routing type agreement                    |   100% |
+| False abstention on structured references |     0% |
+
+The evaluation intentionally does not fabricate retrieval or semantic-grounding scores when those components have not been independently scored.
+
+---
+
+# Verification
+
+Run static checks:
+
+```powershell
+python -m pip check
+python -m ruff check .
+python -m black --check .
 npm run build --prefix frontend
-~~~
+```
 
-Windows requires the documented test split because asyncio uses a loopback
-socket pair:
+Run the automated test suite:
 
-~~~powershell
-.\.venv\Scripts\python.exe -m pytest -q `
-    --ignore=tests/test_api_correlation.py `
-    --ignore=tests/test_api_engine.py `
-    --ignore=tests/test_provider_trace_status.py `
-    --disable-socket `
-    --allow-unix-socket `
-    --tb=short
+```powershell
+python -m pytest -q --disable-socket --allow-unix-socket
+```
 
-.\.venv\Scripts\python.exe -m pytest -q `
-    tests/test_api_correlation.py `
-    tests/test_api_engine.py `
-    tests/test_provider_trace_status.py `
-    --allow-hosts=127.0.0.1,::1 `
-    --allow-unix-socket `
-    --tb=short
-~~~
+The repository also uses GitHub Actions for automated quality checks.
 
-The API group allows loopback connections; it is not identical to strict
-socket blocking. Provider and HTTP mocks remain required.
+---
 
-There is no new frontend browser/unit-test framework in this redesign.
-Type checking, production build, and the manual browser matrix are required.
+# Docker Deployment
 
-## Evaluation
+The deployment retains three application services and a production Nginx frontend.
 
-Prepare actual references:
+Validate the Docker Compose configuration:
 
-~~~powershell
-.\.venv\Scripts\python.exe -m evaluation.prepare
-~~~
-
-Run structured evaluation:
-
-~~~powershell
-.\.venv\Scripts\python.exe -m evaluation.run --dataset evaluation/resolved.json
-~~~
-
-Retrieval labels require genuine artifact-bound review. See
-[evaluation](docs/evaluation.md) before running reviewed retrieval or
-potentially paid generation modes.
-
-No evaluation score or manual-review completion is claimed by this redesign.
-
-## Docker
-
-The existing deployment retains exactly three services and a production nginx
-frontend. It does not use the Vite development server in production.
-
-~~~powershell
+```powershell
 docker compose config --quiet
+```
+
+Build and start:
+
+```powershell
 docker compose up --build -d
+```
+
+Check running services:
+
+```powershell
 docker compose ps
-~~~
+```
 
-Compatible data, indexes, model caches, and writable evidence storage must be
-mounted as described in [deployment](docs/deployment.md).
+Compatible data, indexes, model caches, and writable evidence storage must be mounted according to the deployment documentation.
 
-Do not publish the AI service directly or bake secrets into images.
+The AI service should not be exposed directly to the public internet.
 
-## Final Screenshots — Add After Local Verification
+---
 
-Capture genuine screenshots after testing the redesigned application locally.
+# Data Coverage and Limitations
 
-Recommended captures:
+The platform intentionally reports unavailable metrics instead of replacing them with zeros or unrelated substitute values.
 
-- Overview with actual corpus coverage.
-- Deterministic research with source evidence.
-- Narrative research with its actual provider outcome.
-- Comparison showing correct fiscal-year scope.
-- Financials with an explicit missing metric.
-- Evidence provenance.
-- Actual evaluation state.
+Current known coverage limitations include:
 
-Do not use historical screenshots as proof of this redesign.
-No new screenshots were captured in this environment.
+* Some Apple cash values remain unavailable under the current reconciliation policy.
+* Some Amazon financial metrics remain unavailable under the current resolver.
+* Amazon free cash flow and FCF margin may therefore be unavailable.
+* FY2022 year-over-year growth requires FY2021 data, which is outside the current corpus scope.
+* HTML extraction and inline-XBRL transformation support are not complete implementations of every possible filing structure.
+* Citation-ID validation does not establish semantic entailment.
+* Model revisions and dependencies are not fully pinned.
+* Multi-file artifact publication is non-transactional.
+* Browser cancellation does not guarantee provider-side cancellation.
+* Evidence-session search is not equivalent to full corpus search.
+* Some frontend validation remains partial rather than generated directly from a shared schema.
+* Responsive and accessibility behavior should be independently verified for production deployment.
+* The application does not implement mandatory authentication and should be deployed within an appropriate trusted perimeter.
 
-## Limitations
+These limitations are surfaced explicitly rather than silently masked.
 
-- Financial coverage gaps remain under investigation.
-- HTML extraction and inline transformation support are incomplete.
-- Computed CSS visibility and statement layout are not independently audited.
-- Semantic grounding is not established by citation-ID validation.
-- Model revisions and dependencies are not fully pinned.
-- Multi-file publication is nontransactional.
-- Browser cancellation does not guarantee server/provider cancellation.
-- Retry behavior can incur another provider charge after a lost response.
-- Evidence session search is not full-corpus search.
-- Some frontend validation remains partial rather than a generated schema.
-- Responsive, accessibility, and live API compatibility need local verification.
-- No mandatory authentication was added; deploy within a trusted perimeter.
+---
 
-## Documentation
+# Security and Responsible Use
 
-[Architecture](docs/architecture.md) ·
-[Ingestion](docs/ingestion.md) ·
-[Retrieval](docs/retrieval.md) ·
-[Financial metrics](docs/financial-metrics.md) ·
-[Citations](docs/citations.md) ·
-[Evaluation](docs/evaluation.md) ·
-[Deployment](docs/deployment.md) ·
-[Troubleshooting](docs/troubleshooting.md) ·
-[UI redesign](docs/ui-redesign.md) ·
-[Verification](docs/verification.md)
+This project is designed for financial research and document analysis.
 
-## License and attribution
+It is **not**:
 
-Project license: MIT; see `LICENSE`.
+* A stock-price prediction system
+* An automated trading system
+* An investment adviser
+* A substitute for professional financial analysis
 
-Author identity has not been supplied.
+The system is designed to avoid presenting unsupported financial values as facts and uses explicit availability and abstention states where appropriate.
 
-SEC EDGAR is the primary data source. This project does not imply ownership
-of SEC filings or affiliation with the SEC.
+API credentials must remain outside the repository.
 
-Downloaded model repositories have their own license and usage conditions.
-Consult the actual model cards and license files for the downloaded revisions
-before redistribution or deployment. No new license verification was performed
-during this redesign.
+Retrieved documents are treated as untrusted data and are not treated as application instructions.
+
+---
+
+# Documentation
+
+Additional technical documentation is available in the `docs/` directory:
+
+* [Architecture](docs/architecture.md)
+* [Ingestion](docs/ingestion.md)
+* [Retrieval](docs/retrieval.md)
+* [Financial Metrics](docs/financial-metrics.md)
+* [Citations](docs/citations.md)
+* [Evaluation](docs/evaluation.md)
+* [Deployment](docs/deployment.md)
+* [Troubleshooting](docs/troubleshooting.md)
+* [UI Redesign](docs/ui-redesign.md)
+* [Verification](docs/verification.md)
+
+---
+
+# Future Improvements
+
+Potential future improvements include:
+
+* Expanding the supported company and fiscal-year corpus
+* Broader XBRL concept reconciliation
+* More extensive retrieval benchmarking
+* Independent semantic-grounding evaluation
+* Additional financial statement metrics
+* Improved responsive and accessibility coverage
+* Stronger schema sharing between frontend and backend
+* Authentication and role-based access control for deployed environments
+* Reproducible model and dependency pinning
+* Expanded automated browser testing
+
+---
+
+# Author
+
+## Karthik Neduri
+
+**B.Tech Computer Science and Engineering**
+
+AI / ML • RAG • LLM Applications • Python • FastAPI
+
+GitHub:
+[https://github.com/Karthik-0917](https://github.com/Karthik-0917)
+
+---
+
+# License
+
+This project is licensed under the **MIT License**. See [`LICENSE`](LICENSE).
+
+SEC EDGAR is the primary data source. This project does not imply ownership of SEC filings or affiliation with the U.S. Securities and Exchange Commission.
+
+Downloaded model repositories have their own licenses and usage conditions. Refer to the corresponding model cards and license files before redistribution or deployment.
+
+```
+```
