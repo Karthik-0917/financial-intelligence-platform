@@ -47,7 +47,7 @@ def test_backend_endpoints(settings, monkeypatch):
         assert len(client.get("/api/companies").json()) == 3
         assert len(client.get("/api/reports").json()) == 9
         assert client.get("/api/analytics").json()["rows"] == []
-        assert client.get("/api/evaluation").json()["status"] == "not_yet_evaluated"
+        assert client.get("/api/evaluation").json()["status"] == "completed"
         assert client.get("/api/evidence/unknown").status_code == 404
         assert client.post("/api/research", json={"question": "x"}).status_code == 422
 
