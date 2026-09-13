@@ -1,0 +1,8 @@
+{
+  "preparation_version": "corpus-bound-references-v2",
+  "source_questions_sha256": "a4b11100b6997d4741484fa2ccde5fc174b1e645f93fe8ec2b6b0d2cdff49410",
+  "prepared_dataset_sha256": "05edeed33b1fe4f717728ee69dc4fb75115a968dcd5ca45b4b7aa23f277c6f5d",
+  "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+  "question_count": 75,
+  "reference_scope": "Automatic financial regression references and curated unsupported-scope references; no invented narrative gold answers or chunk relevance labels."
+}

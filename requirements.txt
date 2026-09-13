@@ -1,0 +1,2 @@
+# Runtime dependencies; install .[ml] for ingestion/retrieval and .[dev] for CI.
+-e .

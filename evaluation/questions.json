@@ -1,0 +1,1133 @@
+[
+  {
+    "id": "Q001",
+    "question": "What was Apple's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q002",
+    "question": "What was Apple's net income in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q003",
+    "question": "What was Apple's operating income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q004",
+    "question": "What was Apple's EPS in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q005",
+    "question": "What was Apple's assets in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q006",
+    "question": "What was Apple's cash and cash equivalents in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q007",
+    "question": "What was Apple's operating cash flow in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q008",
+    "question": "What was Microsoft's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q009",
+    "question": "What was Microsoft's gross profit in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q010",
+    "question": "What was Microsoft's net income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q011",
+    "question": "What was Microsoft's equity in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q012",
+    "question": "What was Microsoft's liabilities in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q013",
+    "question": "What was Microsoft's capital expenditure in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q014",
+    "question": "What was Microsoft's EPS in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q015",
+    "question": "What was Amazon's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q016",
+    "question": "What was Amazon's operating income in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q017",
+    "question": "What was Amazon's net income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q018",
+    "question": "What was Amazon's assets in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q019",
+    "question": "What was Amazon's operating cash flow in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q020",
+    "question": "What was Amazon's capital expenditure in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q021",
+    "question": "Compare Apple's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q022",
+    "question": "Compare Apple's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q023",
+    "question": "Compare Apple's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q024",
+    "question": "Compare Apple's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q025",
+    "question": "Compare Apple's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q026",
+    "question": "Compare Microsoft's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q027",
+    "question": "Compare Microsoft's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q028",
+    "question": "Compare Microsoft's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q029",
+    "question": "Compare Microsoft's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q030",
+    "question": "Compare Microsoft's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q031",
+    "question": "Compare Amazon's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q032",
+    "question": "Compare Amazon's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q033",
+    "question": "Compare Amazon's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q034",
+    "question": "Compare Amazon's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q035",
+    "question": "Compare Amazon's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q036",
+    "question": "What was Apple's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q037",
+    "question": "What was Apple's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q038",
+    "question": "What was Apple's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q039",
+    "question": "What was Microsoft's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q040",
+    "question": "What was Microsoft's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q041",
+    "question": "What was Microsoft's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q042",
+    "question": "What was Amazon's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q043",
+    "question": "What was Amazon's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q044",
+    "question": "What was Amazon's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q045",
+    "question": "What was Apple's revenue CAGR from 2022 to 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q046",
+    "question": "Which company had the highest revenue growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q047",
+    "question": "Which company had the highest revenue growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q048",
+    "question": "Which company had the highest net income growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q049",
+    "question": "Which company had the highest net income growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q050",
+    "question": "Which company had the highest operating income growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q051",
+    "question": "Which company had the highest operating income growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q052",
+    "question": "Which company had the highest assets growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q053",
+    "question": "Which company had the highest assets growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q054",
+    "question": "Which company had the highest operating cash flow growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q055",
+    "question": "Which company had the highest operating cash flow growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q056",
+    "question": "Explain Amazon's risk factors in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q057",
+    "question": "Explain Apple's supply chain risks in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q058",
+    "question": "Explain Microsoft's cybersecurity risks in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q059",
+    "question": "Explain Amazon's competition risks in its 2023 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q060",
+    "question": "Explain Apple's business description in its 2022 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q061",
+    "question": "Explain Microsoft's cloud business discussion in its 2023 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q062",
+    "question": "Explain Amazon's liquidity risks in its 2022 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q063",
+    "question": "Explain Apple's foreign exchange risks in its 2023 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q064",
+    "question": "Explain Microsoft's management discussion in its 2022 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q065",
+    "question": "Explain Amazon's operating income in its 2024 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q066",
+    "question": "What will Apple's stock price be in 2027?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q067",
+    "question": "What was Apple's revenue in 2030?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q068",
+    "question": "What was Tesla's revenue in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q069",
+    "question": "Should I buy Microsoft stock in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q070",
+    "question": "Should I sell Amazon stock in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q071",
+    "question": "What was Apple's revenue in 2021?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q072",
+    "question": "What was Nvidia's revenue in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q073",
+    "question": "Predict Amazon revenue in 2025.",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q074",
+    "question": "What was Microsoft's EBITDA in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  },
+  {
+    "id": "Q075",
+    "question": "Give investment advice about Apple in 2024.",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "pending_corpus_or_review"
+  }
+]

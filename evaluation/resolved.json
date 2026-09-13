@@ -1,0 +1,3468 @@
+[
+  {
+    "id": "Q001",
+    "question": "What was Apple's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q002",
+    "question": "What was Apple's net income in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "96995000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q003",
+    "question": "What was Apple's operating income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "operating_income",
+          "value": "119437000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": "2021-09-26",
+          "period_end": "2022-09-24",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-22-000108"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q004",
+    "question": "What was Apple's EPS in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "eps",
+          "value": "6.08",
+          "unit": "USD/shares",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "EarningsPerShareDiluted"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q005",
+    "question": "What was Apple's assets in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "352583000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": null,
+          "period_end": "2023-09-30",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q006",
+    "question": "What was Apple's cash and cash equivalents in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Missing or ambiguous AAPL FY2022 cash",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q007",
+    "question": "What was Apple's operating cash flow in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118254000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q008",
+    "question": "What was Microsoft's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q009",
+    "question": "What was Microsoft's gross profit in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "gross_profit",
+          "value": "146052000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "GrossProfit"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q010",
+    "question": "What was Microsoft's net income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "net_income",
+          "value": "72738000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": "2021-07-01",
+          "period_end": "2022-06-30",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q011",
+    "question": "What was Microsoft's equity in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "equity",
+          "value": "268477000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": null,
+          "period_end": "2024-06-30",
+          "concept": "StockholdersEquity"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q012",
+    "question": "What was Microsoft's liabilities in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "liabilities",
+          "value": "205753000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": null,
+          "period_end": "2023-06-30",
+          "concept": "Liabilities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q013",
+    "question": "What was Microsoft's capital expenditure in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "capex",
+          "value": "23886000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": "2021-07-01",
+          "period_end": "2022-06-30",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q014",
+    "question": "What was Microsoft's EPS in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "eps",
+          "value": "9.68",
+          "unit": "USD/shares",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "EarningsPerShareDiluted"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q015",
+    "question": "What was Amazon's revenue in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q016",
+    "question": "What was Amazon's operating income in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "36852000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q017",
+    "question": "What was Amazon's net income in 2022?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2022,
+          "metric": "net_income",
+          "value": "-2722000000",
+          "unit": "USD",
+          "accession_number": "0001018724-23-000004",
+          "period_start": "2022-01-01",
+          "period_end": "2022-12-31",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-23-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q018",
+    "question": "What was Amazon's assets in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "624894000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q019",
+    "question": "What was Amazon's operating cash flow in 2023?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "84946000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q020",
+    "question": "What was Amazon's capital expenditure in 2024?",
+    "question_type": "FACT",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Missing or ambiguous AMZN FY2024 capex",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q021",
+    "question": "Compare Apple's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "383285000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q022",
+    "question": "Compare Apple's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "96995000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "93736000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q023",
+    "question": "Compare Apple's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "114301000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "123216000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q024",
+    "question": "Compare Apple's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "352583000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": null,
+          "period_end": "2023-09-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "364980000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": null,
+          "period_end": "2024-09-28",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q025",
+    "question": "Compare Apple's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "110543000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118254000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q026",
+    "question": "Compare Microsoft's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "211915000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122",
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q027",
+    "question": "Compare Microsoft's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "72361000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "88136000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122",
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q028",
+    "question": "Compare Microsoft's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "88523000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "109433000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122",
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q029",
+    "question": "Compare Microsoft's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "411976000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": null,
+          "period_end": "2023-06-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "512163000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": null,
+          "period_end": "2024-06-30",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122",
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q030",
+    "question": "Compare Microsoft's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "87582000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118548000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0000950170-23-035122",
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q031",
+    "question": "Compare Amazon's revenue in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "574785000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q032",
+    "question": "Compare Amazon's net income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "30425000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "59248000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q033",
+    "question": "Compare Amazon's operating income in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "36852000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "68593000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q034",
+    "question": "Compare Amazon's assets in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "527854000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": null,
+          "period_end": "2023-12-31",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "624894000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q035",
+    "question": "Compare Amazon's operating cash flow in 2023 and 2024.",
+    "question_type": "COMPARISON",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "84946000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "115877000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": []
+    },
+    "expected_source": [
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q036",
+    "question": "What was Apple's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "123216000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_margin",
+          "value": "31.510222870075568683110207526180520925",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q037",
+    "question": "What was Apple's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "93736000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "net_margin",
+          "value": "23.971255769943866917283619113378597824",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q038",
+    "question": "What was Apple's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118254000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "capex",
+          "value": "9447000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "fcf_margin",
+          "value": "27.825386474356515401434654186965361157",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q039",
+    "question": "What was Microsoft's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "109433000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_margin",
+          "value": "44.644299573273716761449400706586924062",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q040",
+    "question": "What was Microsoft's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "88136000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "net_margin",
+          "value": "35.955972944084986251744029503675720662",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q041",
+    "question": "What was Microsoft's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118548000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "capex",
+          "value": "44477000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "fcf_margin",
+          "value": "30.218013886962410554744168210115779081",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0000950170-24-087843"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q042",
+    "question": "What was Amazon's operating margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "68593000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_margin",
+          "value": "10.751944874200379648221907677452626266",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q043",
+    "question": "What was Amazon's net margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "59248000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "net_margin",
+          "value": "9.2871171971866530607766329811163413323",
+          "unit": "percentage",
+          "years": null
+        }
+      ]
+    },
+    "expected_source": [
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q044",
+    "question": "What was Amazon's free cash flow margin in 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Missing or ambiguous AMZN FY2024 capex",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q045",
+    "question": "What was Apple's revenue CAGR from 2022 to 2024?",
+    "question_type": "CALCULATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "revenue",
+          "value": "394328000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": "2021-09-26",
+          "period_end": "2022-09-24",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "cagr",
+          "value": "-0.41842118085895954634546264252915870600",
+          "unit": "percentage",
+          "years": 2
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-22-000108",
+      "0000320193-24-000123"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q046",
+    "question": "Which company had the highest revenue growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "revenue",
+          "value": "394328000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": "2021-09-26",
+          "period_end": "2022-09-24",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "revenue",
+          "value": "198270000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": "2021-07-01",
+          "period_end": "2022-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2022,
+          "metric": "revenue",
+          "value": "513983000000",
+          "unit": "USD",
+          "accession_number": "0001018724-23-000004",
+          "period_start": "2022-01-01",
+          "period_end": "2022-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "-0.83509159887200503134446450670507800613",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "23.630402985827407071165582286780652645",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "24.120642122404826618779220324407616594",
+          "unit": "percentage",
+          "years": 2
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-22-000108",
+      "0000320193-24-000123",
+      "0000950170-24-087843",
+      "0001018724-23-000004",
+      "0001018724-25-000004",
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q047",
+    "question": "Which company had the highest revenue growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "383285000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "391035000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "211915000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "245122000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "revenue",
+          "value": "574785000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "revenue",
+          "value": "637959000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "2.0219940775141213457348970087532775872",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "15.669962013071278578675412311540004247",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "10.990892246666144732378193585427594666",
+          "unit": "percentage",
+          "years": 1
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123",
+      "0000950170-23-035122",
+      "0000950170-24-087843",
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q048",
+    "question": "Which company had the highest net income growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Growth undefined for a nonpositive base",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q049",
+    "question": "Which company had the highest net income growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "96995000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "93736000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "72361000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "88136000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "net_income",
+          "value": "30425000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "NetIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "net_income",
+          "value": "59248000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "-3.3599670086086911696479199958760760864",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "21.800417351888448197233316289161288539",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "94.734593262119967132292522596548890715",
+          "unit": "percentage",
+          "years": 1
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123",
+      "0000950170-23-035122",
+      "0000950170-24-087843",
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q050",
+    "question": "Which company had the highest operating income growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "operating_income",
+          "value": "119437000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": "2021-09-26",
+          "period_end": "2022-09-24",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "123216000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "operating_income",
+          "value": "83383000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": "2021-07-01",
+          "period_end": "2022-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "109433000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2022,
+          "metric": "operating_income",
+          "value": "12248000000",
+          "unit": "USD",
+          "accession_number": "0001018724-23-000004",
+          "period_start": "2022-01-01",
+          "period_end": "2022-12-31",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "68593000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "3.1640111523229819905054547585756507615",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "31.241380137438086900207476344098917045",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "460.03429131286740692357935989549314174",
+          "unit": "percentage",
+          "years": 2
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-22-000108",
+      "0000320193-24-000123",
+      "0000950170-24-087843",
+      "0001018724-23-000004",
+      "0001018724-25-000004",
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q051",
+    "question": "Which company had the highest operating income growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "114301000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "123216000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "88523000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "109433000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_income",
+          "value": "36852000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "OperatingIncomeLoss"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_income",
+          "value": "68593000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "OperatingIncomeLoss"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "7.7995818059334564002064723843185973876",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "23.620979858341899845237960755961727461",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "86.131010528600890046673179203299685227",
+          "unit": "percentage",
+          "years": 1
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123",
+      "0000950170-23-035122",
+      "0000950170-24-087843",
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q052",
+    "question": "Which company had the highest assets growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "assets",
+          "value": "352755000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": null,
+          "period_end": "2022-09-24",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "364980000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": null,
+          "period_end": "2024-09-28",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "assets",
+          "value": "364840000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": null,
+          "period_end": "2022-06-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "512163000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": null,
+          "period_end": "2024-06-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2022,
+          "metric": "assets",
+          "value": "462675000000",
+          "unit": "USD",
+          "accession_number": "0001018724-23-000004",
+          "period_start": null,
+          "period_end": "2022-12-31",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "624894000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "3.4655780924437640855551303312497342348",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "40.380166648393816467492599495669334503",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "35.061112011671259523423569460204247042",
+          "unit": "percentage",
+          "years": 2
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-22-000108",
+      "0000320193-24-000123",
+      "0000950170-24-087843",
+      "0001018724-23-000004",
+      "0001018724-25-000004",
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q053",
+    "question": "Which company had the highest assets growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "352583000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": null,
+          "period_end": "2023-09-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "364980000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": null,
+          "period_end": "2024-09-28",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "411976000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": null,
+          "period_end": "2023-06-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "512163000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": null,
+          "period_end": "2024-06-30",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "assets",
+          "value": "527854000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": null,
+          "period_end": "2023-12-31",
+          "concept": "Assets"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "assets",
+          "value": "624894000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": null,
+          "period_end": "2024-12-31",
+          "concept": "Assets"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "3.5160515396374754313168814151561476305",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "24.318649630075538380876555915878594870",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "18.383871297745209849693286401163958216",
+          "unit": "percentage",
+          "years": 1
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123",
+      "0000950170-23-035122",
+      "0000950170-24-087843",
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q054",
+    "question": "Which company had the highest operating cash flow growth between 2022 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2022,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2022,
+          "metric": "operating_cash_flow",
+          "value": "122151000000",
+          "unit": "USD",
+          "accession_number": "0000320193-22-000108",
+          "period_start": "2021-09-26",
+          "period_end": "2022-09-24",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118254000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2022,
+          "metric": "operating_cash_flow",
+          "value": "89035000000",
+          "unit": "USD",
+          "accession_number": "0001564590-22-026876",
+          "period_start": "2021-07-01",
+          "period_end": "2022-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118548000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2022,
+          "metric": "operating_cash_flow",
+          "value": "46752000000",
+          "unit": "USD",
+          "accession_number": "0001018724-23-000004",
+          "period_start": "2022-01-01",
+          "period_end": "2022-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "115877000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "-3.1903136282142594002505096151484637866",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "33.147638569102038524175885887572303027",
+          "unit": "percentage",
+          "years": 2
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "147.85463723477070499657768651608487337",
+          "unit": "percentage",
+          "years": 2
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-22-000108",
+      "0000320193-24-000123",
+      "0000950170-24-087843",
+      "0001018724-23-000004",
+      "0001018724-25-000004",
+      "0001564590-22-026876"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q055",
+    "question": "Which company had the highest operating cash flow growth between 2023 and 2024?",
+    "question_type": "MULTI_DOCUMENT",
+    "company": [
+      "Apple",
+      "Microsoft",
+      "Amazon"
+    ],
+    "year": [
+      2023,
+      2024
+    ],
+    "expected_answer": {
+      "facts": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "110543000000",
+          "unit": "USD",
+          "accession_number": "0000320193-23-000106",
+          "period_start": "2022-09-25",
+          "period_end": "2023-09-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118254000000",
+          "unit": "USD",
+          "accession_number": "0000320193-24-000123",
+          "period_start": "2023-10-01",
+          "period_end": "2024-09-28",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "87582000000",
+          "unit": "USD",
+          "accession_number": "0000950170-23-035122",
+          "period_start": "2022-07-01",
+          "period_end": "2023-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "118548000000",
+          "unit": "USD",
+          "accession_number": "0000950170-24-087843",
+          "period_start": "2023-07-01",
+          "period_end": "2024-06-30",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2023,
+          "metric": "operating_cash_flow",
+          "value": "84946000000",
+          "unit": "USD",
+          "accession_number": "0001018724-24-000008",
+          "period_start": "2023-01-01",
+          "period_end": "2023-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "operating_cash_flow",
+          "value": "115877000000",
+          "unit": "USD",
+          "accession_number": "0001018724-25-000004",
+          "period_start": "2024-01-01",
+          "period_end": "2024-12-31",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "calculations": [
+        {
+          "ticker": "AAPL",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "6.9755660693123942719122875261210569643",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "MSFT",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "35.356580119202575871754470096595190793",
+          "unit": "percentage",
+          "years": 1
+        },
+        {
+          "ticker": "AMZN",
+          "fiscal_year": 2024,
+          "metric": "growth",
+          "value": "36.412544439997174675676312009982812610",
+          "unit": "percentage",
+          "years": 1
+        }
+      ]
+    },
+    "expected_source": [
+      "0000320193-23-000106",
+      "0000320193-24-000123",
+      "0000950170-23-035122",
+      "0000950170-24-087843",
+      "0001018724-24-000008",
+      "0001018724-25-000004"
+    ],
+    "expected_evidence": [],
+    "annotation_status": "store_derived_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Generated from the same validated financial domain implementation; suitable for regression, not an independent audit of financial correctness.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q056",
+    "question": "Explain Amazon's risk factors in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q057",
+    "question": "Explain Apple's supply chain risks in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q058",
+    "question": "Explain Microsoft's cybersecurity risks in its 2024 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q059",
+    "question": "Explain Amazon's competition risks in its 2023 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q060",
+    "question": "Explain Apple's business description in its 2022 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q061",
+    "question": "Explain Microsoft's cloud business discussion in its 2023 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q062",
+    "question": "Explain Amazon's liquidity risks in its 2022 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q063",
+    "question": "Explain Apple's foreign exchange risks in its 2023 filing.",
+    "question_type": "RISK",
+    "company": [
+      "Apple"
+    ],
+    "year": [
+      2023
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q064",
+    "question": "Explain Microsoft's management discussion in its 2022 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Microsoft"
+    ],
+    "year": [
+      2022
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q065",
+    "question": "Explain Amazon's operating income in its 2024 filing.",
+    "question_type": "EXPLANATION",
+    "company": [
+      "Amazon"
+    ],
+    "year": [
+      2024
+    ],
+    "expected_answer": null,
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "unresolved",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Narrative answers and chunk relevance require reviewed labels.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q066",
+    "question": "What will Apple's stock price be in 2027?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q067",
+    "question": "What was Apple's revenue in 2030?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q068",
+    "question": "What was Tesla's revenue in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q069",
+    "question": "Should I buy Microsoft stock in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q070",
+    "question": "Should I sell Amazon stock in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q071",
+    "question": "What was Apple's revenue in 2021?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q072",
+    "question": "What was Nvidia's revenue in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q073",
+    "question": "Predict Amazon revenue in 2025.",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q074",
+    "question": "What was Microsoft's EBITDA in 2024?",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  },
+  {
+    "id": "Q075",
+    "question": "Give investment advice about Apple in 2024.",
+    "question_type": "UNSUPPORTED",
+    "company": [],
+    "year": [],
+    "expected_answer": {
+      "abstained": true
+    },
+    "expected_source": [],
+    "expected_evidence": [],
+    "annotation_status": "policy_reference",
+    "corpus_version": "06f72ff9280f23ee2e4a59cde0de506ee1e9c2c0be1c33f75a041741f9ffd2f9",
+    "preparation_version": "corpus-bound-references-v2",
+    "annotation_note": "Expected unsupported scope comes from the curated question label, not the router's prediction.",
+    "retrieval_annotation_status": "not_reviewed"
+  }
+]

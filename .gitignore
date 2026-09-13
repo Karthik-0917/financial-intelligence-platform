@@ -1,0 +1,39 @@
+﻿@"
+# Python environments and caches
+.venv/
+.venv312/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+financial_intelligence_platform.egg-info/
+
+# Secrets
+.env
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/tsconfig.tsbuildinfo
+
+# Local ML / Hugging Face cache
+models/
+
+# Raw SEC source files
+data/raw/
+
+# Temporary local diagnostics
+*_diagnosis_windows.py
+fix_*_windows.py
+fix_manifest_correct.py
+groq_test.py
+retrieval_test.py
+status_test.py
+test_groq_full.py
+test_groq_schema.py
+rag_report.txt
+
+# Development-only documentation
+docs/
+"@ | Set-Content .gitignore

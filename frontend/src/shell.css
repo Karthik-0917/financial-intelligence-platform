@@ -1,0 +1,2879 @@
+/* Direct Visual Implementation - Direct Visual Copycat */
+/* This file provides Approved visual language on top of existing foundation tokens */
+
+:root {
+  --fluxa-canvas: var(--fi-canvas);
+  --fluxa-surface: var(--fi-surface);
+  --fluxa-surface-muted: var(--fi-surface-muted);
+  --fluxa-surface-inset: var(--fi-surface-inset);
+  --fluxa-border: var(--fi-border);
+  --fluxa-border-subtle: var(--fi-border-subtle);
+  --fluxa-border-strong: var(--fi-border-strong);
+  --fluxa-text-primary: var(--fi-text-primary);
+  --fluxa-text-secondary: var(--fi-text-secondary);
+  --fluxa-text-tertiary: var(--fi-text-tertiary);
+  --fluxa-accent: var(--fi-accent);
+  --fluxa-accent-tint: var(--fi-accent-tint);
+  --fluxa-positive: var(--fi-positive);
+  --fluxa-positive-soft: var(--fi-positive-soft);
+  --fluxa-negative: var(--fi-negative);
+  --fluxa-negative-soft: var(--fi-negative-soft);
+  --fluxa-radius: var(--fi-radius-panel);
+  --fluxa-radius-sm: var(--fi-radius-control);
+  --fluxa-radius-pill: var(--fi-radius-pill);
+}
+
+/* Override body to match Approved light canvas */
+body {
+  background: var(--fluxa-canvas) !important;
+}
+
+/* Approved Shell - outer white container like in reference */
+.fluxa-page {
+  background: var(--fluxa-canvas);
+  min-height: 100vh;
+  padding: 12px;
+}
+
+.fluxa-shell {
+  background: var(--fluxa-surface);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03);
+  animation: fluxa-enter 420ms ease-out;
+}
+
+@keyframes fluxa-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Approved Header - Top nav with pill navigation like reference */
+.fluxa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+  background: var(--fluxa-surface);
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.fluxa-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.fluxa-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 650;
+  font-size: 15px;
+  color: var(--fluxa-text-primary);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  min-height: 36px;
+  flex-shrink: 0;
+}
+
+.fluxa-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--fluxa-text-primary);
+  color: white;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+.fluxa-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--fluxa-surface-muted);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--fluxa-border-subtle);
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fluxa-nav::-webkit-scrollbar { display: none; }
+
+.fluxa-nav button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--fluxa-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.2;
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.fluxa-nav button:hover {
+  background: white;
+  color: var(--fluxa-text-primary);
+}
+
+.fluxa-nav button.active {
+  background: var(--fi-action);
+  color: white;
+  font-weight: 550;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.fluxa-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.fluxa-search,
+.app .fluxa-search,
+.app.app .fluxa-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 8px;
+  padding: 0 8px 0 10px;
+  min-width: 200px;
+  width: 240px;
+  max-width: 260px;
+  height: 32px;
+  min-height: 32px !important;
+  max-height: 32px;
+  color: var(--fluxa-text-secondary);
+  cursor: pointer;
+  font-size: 13px;
+  flex: 0 0 240px;
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.fluxa-search:hover {
+  border-color: var(--fluxa-border-strong);
+  background: white;
+}
+
+.fluxa-search svg,
+.app .fluxa-search svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.fluxa-search input,
+.app .fluxa-search input,
+.app.app .fluxa-search input {
+  border: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  height: 18px !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  color: var(--fluxa-text-primary) !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.fluxa-search kbd,
+.app .fluxa-search kbd {
+  font-size: 11px;
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--fluxa-text-tertiary);
+  white-space: nowrap;
+  font-family: inherit;
+  flex-shrink: 0;
+  margin-left: auto;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.fluxa-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--fluxa-border);
+  background: white;
+  display: grid;
+  place-items: center;
+  color: var(--fluxa-text-secondary);
+  flex-shrink: 0;
+}
+
+.fluxa-icon-btn:hover {
+  background: var(--fluxa-surface-inset);
+  color: var(--fluxa-text-primary);
+  border-color: var(--fluxa-border-strong);
+}
+
+.fluxa-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px 3px 3px;
+  border: 1px solid var(--fluxa-border);
+  border-radius: 20px;
+  background: white;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fluxa-text-primary);
+  white-space: nowrap;
+}
+
+.fluxa-user-mark {
+  width: 24px;
+  height: 24px;
+  background: var(--fluxa-text-primary);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fluxa-mobile-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--fluxa-border);
+  background: white;
+  place-items: center;
+  color: var(--fluxa-text-primary);
+}
+
+/* Greeting */
+.fluxa-greeting {
+  padding: 20px 20px 0;
+  animation: fluxa-enter 220ms ease-out 60ms backwards;
+}
+
+.fluxa-greeting h1 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--fluxa-text-primary);
+  margin: 0 0 2px;
+}
+
+.fluxa-greeting p {
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  margin: 0;
+}
+
+/* Filters row like "This Month" "All Partner" */
+.fluxa-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px 0;
+}
+
+.fluxa-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--fluxa-border);
+  border-radius: 8px;
+  background: white;
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  font-weight: 500;
+}
+
+.fluxa-filter-btn:hover { border-color: var(--fluxa-border-strong); color: var(--fluxa-text-primary); }
+
+/* Main content */
+.fluxa-main {
+  padding: 16px 20px 20px;
+  background: var(--fluxa-surface);
+}
+
+/* KPI Grid - 4 cards like Revenue, Net Profit, Cash Balance, Operating */
+.fluxa-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fluxa-kpi {
+  background: var(--fluxa-surface);
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+  animation: fluxa-enter 200ms ease-out backwards;
+}
+
+.fluxa-kpi:hover {
+  border-color: var(--fluxa-border-strong);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+
+.fluxa-kpi:nth-child(1) { animation-delay: 80ms; }
+.fluxa-kpi:nth-child(2) { animation-delay: 120ms; }
+.fluxa-kpi:nth-child(3) { animation-delay: 160ms; }
+.fluxa-kpi:nth-child(4) { animation-delay: 200ms; }
+
+.fluxa-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.fluxa-kpi-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  font-weight: 500;
+}
+
+.fluxa-kpi-label svg { width: 14px; height: 14px; color: var(--fluxa-text-tertiary); }
+
+.fluxa-kpi-arrow {
+  color: var(--fluxa-text-tertiary);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  border: 1px solid var(--fluxa-border);
+  background: white;
+}
+
+.fluxa-kpi-arrow:hover { background: var(--fluxa-surface-muted); color: var(--fluxa-text-primary); border-color: var(--fluxa-border-strong); }
+
+.fluxa-kpi-arrow.fluxa-icon-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--fluxa-border);
+  background: white;
+  border-radius: 6px;
+}
+
+.fluxa-kpi-value {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--fluxa-text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fluxa-badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+  line-height: 1.3;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.fluxa-badge.green {
+  background: var(--fi-positive-soft);
+  color: var(--fi-positive);
+}
+
+.fluxa-badge.red {
+  background: var(--fi-negative-soft);
+  color: var(--fi-negative);
+}
+
+.fluxa-badge.blue {
+  background: var(--fi-info-soft);
+  color: var(--fi-info);
+}
+
+.fluxa-badge.neutral {
+  background: var(--fi-neutral-soft);
+  color: var(--fi-neutral);
+  border: 1px solid var(--fi-border);
+}
+
+.fluxa-mini-chart {
+  height: 40px;
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.fluxa-mini-bar {
+  flex: 1;
+  background: var(--fluxa-border-subtle);
+  border-radius: 2px;
+  min-height: 4px;
+  transition: height 420ms ease-out, background 120ms ease;
+}
+
+.fluxa-mini-bar.active {
+  background: linear-gradient(180deg, var(--fluxa-accent) 0%, #A8C3E8 100%);
+}
+
+/* Grid layouts */
+.fluxa-grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 0.9fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fluxa-grid-2-equal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fluxa-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fluxa-card {
+  background: var(--fluxa-surface);
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  overflow: hidden;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  animation: fluxa-enter 200ms ease-out backwards;
+}
+
+.fluxa-card:hover {
+  border-color: var(--fluxa-border-strong);
+}
+
+.fluxa-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+  gap: 12px;
+}
+
+.fluxa-card-header h2, .fluxa-card-header h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fluxa-text-primary);
+  margin: 0;
+  letter-spacing: -0.1px;
+}
+
+.fluxa-card-header p {
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  margin: 2px 0 0;
+  line-height: 1.4;
+}
+
+.fluxa-card-header small {
+  font-size: 11px;
+  color: var(--fluxa-text-tertiary);
+  display: block;
+  margin-top: 2px;
+}
+
+.fluxa-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.fluxa-card-body {
+  padding: 16px;
+}
+
+.fluxa-card-body.p-0 { padding: 0; }
+
+/* Revenue Performance Chart - bar chart */
+.fluxa-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 200px;
+  padding: 12px 8px 0;
+}
+
+.fluxa-bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.fluxa-bar {
+  width: 100%;
+  max-width: 36px;
+  background: repeating-linear-gradient(45deg, #F2F3F5, #F2F3F5 2px, #E8E8E8 2px, #E8E8E8 4px);
+  border-radius: 8px 8px 4px 4px;
+  position: relative;
+  transition: height 420ms ease-out;
+  min-height: 6px;
+}
+
+.fluxa-bar.active {
+  background: linear-gradient(180deg, var(--fluxa-accent) 0%, #A8C3E8 100%);
+  box-shadow: 0 4px 12px rgba(69,98,232,0.25);
+}
+
+.fluxa-bar-label {
+  font-size: 11px;
+  color: var(--fluxa-text-tertiary);
+}
+
+.fluxa-bar-value {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--fluxa-text-primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.fluxa-bar-value::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--fluxa-text-primary);
+}
+
+/* Cash Flow Summary */
+.fluxa-cashflow {
+  display: grid;
+  gap: 8px;
+}
+
+.fluxa-cashflow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--fluxa-surface-muted);
+  border-radius: 8px;
+  border: 1px solid var(--fluxa-border-subtle);
+}
+
+.fluxa-cashflow-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+}
+
+.fluxa-cashflow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fluxa-cashflow-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fluxa-text-primary);
+}
+
+/* Expense Breakdown - horizontal segmented bars */
+.fluxa-expense-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fluxa-expense-item:last-child { margin-bottom: 0; }
+
+.fluxa-expense-label {
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.fluxa-expense-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--fluxa-border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+}
+
+.fluxa-expense-segment {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 420ms ease-out;
+}
+
+.fluxa-expense-value {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fluxa-text-secondary);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Tables - Recent Transactions style */
+.fluxa-table-wrap {
+  overflow-x: auto;
+}
+
+.fluxa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.fluxa-table thead th {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fluxa-text-tertiary);
+  text-align: left;
+  padding: 10px 16px;
+  background: var(--fluxa-surface-muted);
+  border-bottom: 1px solid var(--fluxa-border);
+  white-space: nowrap;
+}
+
+.fluxa-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+  color: var(--fluxa-text-primary);
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.fluxa-table tbody tr:hover {
+  background: var(--fi-surface-inset);
+}
+
+.fluxa-table tbody tr:last-child td { border-bottom: 0; }
+
+.fluxa-company-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fluxa-company-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border);
+  color: var(--fluxa-text-secondary);
+}
+
+.fluxa-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.fluxa-status-pill.success {
+  background: var(--fi-positive-soft);
+  color: var(--fi-positive);
+}
+
+.fluxa-status-pill.pending {
+  background: var(--fi-warning-soft);
+  color: var(--fi-warning);
+}
+
+.fluxa-status-pill.failed {
+  background: var(--fi-negative-soft);
+  color: var(--fi-negative);
+}
+
+.fluxa-status-pill.neutral {
+  background: var(--fi-neutral-soft);
+  color: var(--fi-neutral);
+  border: 1px solid var(--fi-border);
+}
+
+/* AI Panel - Assistant style */
+.fluxa-ai {
+  background: var(--fluxa-surface);
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fluxa-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+}
+
+.fluxa-ai-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fluxa-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fluxa-get-plus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--fi-action);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fluxa-get-plus:hover { background: var(--fi-action-hover); transform: translateY(-1px); }
+
+.fluxa-ai-body {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+}
+
+.fluxa-ai-message {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--fluxa-text-secondary);
+  max-width: 92%;
+  animation: fluxa-enter 200ms ease-out backwards;
+}
+
+.fluxa-ai-message.assistant {
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border-subtle);
+  border-radius: 12px;
+  padding: 10px 12px;
+  align-self: flex-start;
+}
+
+.fluxa-ai-message.user {
+  background: var(--fi-accent-tint);
+  border: 1px solid #D6DCFF;
+  border-radius: 12px;
+  padding: 10px 12px;
+  align-self: flex-end;
+  color: var(--fluxa-text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.fluxa-ai-message.user::after {
+  content: 'B';
+  width: 20px;
+  height: 20px;
+  background: var(--fluxa-text-primary);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.fluxa-ai-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.fluxa-ai-suggestion {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.fluxa-ai-suggestion:hover {
+  background: white;
+  border-color: var(--fluxa-border-strong);
+  color: var(--fluxa-text-primary);
+  transform: translateY(-1px);
+}
+
+.fluxa-ai-input {
+  margin: 0 12px 12px;
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: all 120ms ease;
+}
+
+.fluxa-ai-input:focus-within {
+  border-color: var(--fi-focus);
+  background: white;
+  box-shadow: 0 0 0 3px var(--fi-accent-tint);
+}
+
+.fluxa-ai-input textarea, .fluxa-ai-input input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  resize: none;
+  color: var(--fluxa-text-primary);
+  font-family: inherit;
+}
+
+.fluxa-ai-input textarea::placeholder, .fluxa-ai-input input::placeholder { color: var(--fluxa-text-tertiary); }
+
+.fluxa-ai-input-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fluxa-ai-input-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fluxa-ai-plus {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--fluxa-border);
+  background: white;
+  display: grid;
+  place-items: center;
+  color: var(--fluxa-text-secondary);
+  cursor: pointer;
+}
+
+.fluxa-ai-plus:hover { background: var(--fluxa-surface-inset); color: var(--fluxa-text-primary); }
+
+.fluxa-ai-send {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--fi-action);
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.fluxa-ai-send:hover { background: var(--fi-action-hover); transform: translateY(-1px); }
+
+.fluxa-ai-send:disabled { opacity: 0.5; transform: none; }
+
+/* Research result */
+.fluxa-research-result {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  overflow: hidden;
+  margin-top: 12px;
+  animation: fluxa-enter 240ms ease-out;
+}
+
+.fluxa-research-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.fluxa-research-header h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--fluxa-text-primary);
+  line-height: 1.3;
+}
+
+.fluxa-research-body {
+  padding: 16px;
+}
+
+.fluxa-research-answer {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--fluxa-text-primary);
+  white-space: pre-wrap;
+}
+
+/* Buttons */
+.fluxa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 120ms ease;
+  white-space: nowrap;
+  min-height: 36px;
+}
+
+.fluxa-btn-primary {
+  background: var(--fi-action);
+  color: white;
+  border-color: var(--fi-action);
+}
+
+.fluxa-btn-primary:hover { background: var(--fi-action-hover); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+.fluxa-btn-secondary {
+  background: white;
+  color: var(--fluxa-text-primary);
+  border-color: var(--fluxa-border-strong);
+}
+
+.fluxa-btn-secondary:hover { background: var(--fluxa-surface-inset); }
+
+.fluxa-btn-ghost {
+  background: transparent;
+  color: var(--fluxa-text-secondary);
+  border-color: transparent;
+  padding: 6px 10px;
+  min-height: 32px;
+}
+
+.fluxa-btn-ghost:hover { background: var(--fluxa-surface-muted); color: var(--fluxa-text-primary); }
+
+/* Tabs like ROI, Loan, Investment */
+.fluxa-tabs {
+  display: inline-flex;
+  gap: 2px;
+  background: var(--fluxa-surface-muted);
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--fluxa-border-subtle);
+}
+
+.fluxa-tab {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fluxa-text-secondary);
+  min-height: 28px;
+}
+
+.fluxa-tab.active {
+  background: white;
+  color: var(--fluxa-text-primary);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-color: var(--fluxa-border);
+  font-weight: 550;
+}
+
+.fluxa-tab:hover:not(.active) { color: var(--fluxa-text-primary); }
+
+/* Inputs */
+.fluxa-input, .fluxa-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--fluxa-border-strong);
+  border-radius: 8px;
+  background: white;
+  font-size: 13px;
+  color: var(--fluxa-text-primary);
+  height: 36px;
+  transition: all 120ms ease;
+}
+
+.fluxa-input:focus, .fluxa-select:focus {
+  outline: none;
+  border-color: var(--fi-focus);
+  box-shadow: 0 0 0 3px var(--fi-accent-tint);
+}
+
+/* Metric Summary */
+.fluxa-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.fluxa-metric {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 14px;
+  transition: all 120ms ease;
+}
+
+.fluxa-metric:hover { border-color: var(--fluxa-border-strong); }
+
+.fluxa-metric-label {
+  font-size: 11px;
+  color: var(--fluxa-text-tertiary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.fluxa-metric-value {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--fluxa-text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.fluxa-metric-detail {
+  font-size: 12px;
+  color: var(--fluxa-text-secondary);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Loading and notices -  */
+.fluxa-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--fluxa-surface-muted);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--fluxa-text-secondary);
+  margin: 12px 0;
+}
+
+.fluxa-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 12px 0;
+  border: 1px solid;
+}
+
+.fluxa-notice.info {
+  background: var(--fi-info-soft);
+  border-color: #D6DCFF;
+  color: var(--fi-info);
+}
+
+.fluxa-notice.warning {
+  background: var(--fi-warning-soft);
+  border-color: #FDE68A;
+  color: var(--fi-warning);
+}
+
+.fluxa-notice.danger {
+  background: var(--fi-negative-soft);
+  border-color: #FECACA;
+  color: var(--fi-negative);
+}
+
+/* Empty */
+.fluxa-empty {
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--fluxa-text-secondary);
+}
+
+.fluxa-empty h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fluxa-text-primary);
+  margin: 12px 0 6px;
+}
+
+.fluxa-empty p {
+  font-size: 13px;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Command Dialog - Search modal */
+.fluxa-command-dialog {
+  width: min(640px, calc(100vw - 24px));
+  max-height: min(640px, 80vh);
+  border: 1px solid var(--fluxa-border);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  overflow: hidden;
+  animation: fluxa-dialog-enter 200ms ease-out;
+  background: white;
+  color: var(--fluxa-text-primary);
+}
+
+.fluxa-command-dialog::backdrop {
+  background: rgba(24,25,29,0.28);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fluxa-dialog-enter {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fluxa-command-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+}
+
+.fluxa-command-header input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--fluxa-text-primary);
+}
+
+.fluxa-command-results {
+  padding: 12px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.fluxa-command-group {
+  margin-bottom: 16px;
+}
+
+.fluxa-command-group h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fluxa-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+  padding: 0 8px;
+}
+
+.fluxa-command-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+  color: var(--fluxa-text-primary);
+  transition: background 120ms ease;
+}
+
+.fluxa-command-item:hover { background: var(--fluxa-surface-muted); }
+
+.fluxa-command-item small {
+  display: block;
+  font-size: 11px;
+  color: var(--fluxa-text-secondary);
+  margin-top: 2px;
+}
+
+/* Footer */
+.fluxa-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-top: 1px solid var(--fluxa-border-subtle);
+  font-size: 11px;
+  color: var(--fluxa-text-tertiary);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Hide old app shell visually but keep for tests */
+.app > .sidebar,
+.app > .main-shell {
+  display: none !important;
+}
+
+/* Ensure fluxa page takes over */
+.app.fluxa-page {
+  display: block !important;
+}
+
+.app.fluxa-page .sidebar,
+.app.fluxa-page .main-shell {
+  display: none !important;
+}
+
+/* But keep navigation-dialog and command-dialog for functionality */
+.navigation-dialog,
+.command-dialog {
+  border: 1px solid var(--fluxa-border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  background: white;
+}
+
+.navigation-dialog::backdrop,
+.command-dialog::backdrop {
+  background: rgba(24,25,29,0.28);
+}
+
+/* Compatibility for existing mf-* classes */
+.mf-overview {
+  display: grid;
+  gap: 12px;
+}
+
+.mf-executive-header {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+}
+
+.mf-company-snapshots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mf-company-snapshots article {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 16px;
+  border-top: 3px solid var(--fi-accent);
+  transition: all 120ms ease;
+}
+
+.mf-company-snapshots article:hover {
+  border-color: var(--fluxa-border-strong);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+
+.mf-overview-analysis,
+.mf-overview-lower {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 12px;
+}
+
+.mf-surface {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 16px;
+}
+
+.mf-ranking-chart {
+  display: grid;
+  gap: 10px;
+}
+
+.mf-ranking-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) minmax(0, 1.5fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+}
+
+.mf-ranking-track {
+  height: 6px;
+  background: var(--fluxa-border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+}
+
+.mf-ranking-track > span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  transition: width 420ms ease-in-out;
+}
+
+/* Financial workspace */
+.mf-financial-workspace {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.mf-metric-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  padding: 12px;
+}
+
+.mf-metric-navigation button {
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 13px;
+  color: var(--fluxa-text-secondary);
+}
+
+.mf-metric-navigation button:hover {
+  background: var(--fluxa-surface-muted);
+  color: var(--fluxa-text-primary);
+}
+
+.mf-metric-navigation button.selected {
+  background: var(--fi-action);
+  color: white;
+  font-weight: 500;
+}
+
+/* Library */
+.mf-library {
+  background: white;
+  border: 1px solid var(--fluxa-border);
+  border-radius: var(--fluxa-radius);
+  overflow: hidden;
+}
+
+.mf-library-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--fluxa-surface-muted);
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+}
+
+.mf-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mf-table thead th {
+  background: var(--fluxa-surface-muted);
+  color: var(--fluxa-text-tertiary);
+  font-size: 11px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--fluxa-border);
+  font-weight: 500;
+}
+
+.mf-table tbody td, .mf-table tbody th {
+  padding: 12px;
+  border-bottom: 1px solid var(--fluxa-border-subtle);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .fluxa-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fluxa-grid-2 { grid-template-columns: minmax(0, 1fr); }
+  .fluxa-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mf-overview-analysis, .mf-overview-lower { grid-template-columns: minmax(0, 1fr); }
+  .mf-company-snapshots { grid-template-columns: minmax(0, 1fr); }
+  .mf-financial-workspace { grid-template-columns: minmax(0, 1fr); }
+  .mf-library-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .fluxa-page { padding: 0; }
+  .fluxa-shell { border-radius: 0; border-left: 0; border-right: 0; }
+  .fluxa-header { padding: 10px 14px; flex-wrap: wrap; }
+  .fluxa-header-left { flex: 1; min-width: 0; }
+  .fluxa-nav { order: 3; width: 100%; }
+  .fluxa-search,
+  .app .fluxa-search,
+  .app.app .fluxa-search { min-width: 0; flex: 1 1 auto; width: auto; max-width: none; }
+  .fluxa-search kbd,
+  .app .fluxa-search kbd { display: none; }
+  .fluxa-main { padding: 12px; }
+  .fluxa-kpi-grid { grid-template-columns: 1fr; }
+  .fluxa-grid-3 { grid-template-columns: 1fr; }
+  .fluxa-mobile-toggle { display: grid; }
+  .fluxa-header-right .fluxa-icon-btn, .fluxa-user { display: none; }
+  .fluxa-greeting, .fluxa-filters { padding-left: 14px; padding-right: 14px; }
+  .mf-executive-header { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .fluxa-kpi-value { font-size: 16px; }
+}
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference) {
+  .fluxa-kpi, .fluxa-card, .mf-company-snapshots article, .mf-surface {
+    animation: fluxa-enter 200ms ease-out backwards;
+  }
+  .fluxa-kpi:nth-child(2) { animation-delay: 40ms; }
+  .fluxa-kpi:nth-child(3) { animation-delay: 80ms; }
+  .fluxa-kpi:nth-child(4) { animation-delay: 120ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fluxa-kpi, .fluxa-card { animation: none; }
+}
+
+/* ==================================================
+   PATCH 2 — Compare + Financials UI Correction Only
+   Compact filter areas, preserve Patch 1 Overview
+   ================================================== */
+
+/* Compare — compact filter/control area */
+.app .mf-benchmark,
+.app.app .mf-benchmark {
+  gap: 12px !important;
+}
+
+.app .mf-benchmark-controls,
+.app.app .mf-benchmark-controls,
+.mf-benchmark-controls.fluxa-card,
+.app .mf-benchmark-controls.fluxa-card,
+.app.app .mf-benchmark-controls.fluxa-card {
+  display: block !important;
+  grid-template-columns: unset !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  margin-bottom: 12px !important;
+  background: var(--fluxa-surface) !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: var(--fluxa-radius) !important;
+}
+
+.app .mf-benchmark-controls .fluxa-card-body,
+.app.app .mf-benchmark-controls .fluxa-card-body,
+.mf-benchmark-controls.fluxa-card .fluxa-card-body {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px 16px !important;
+  padding: 12px 16px !important;
+}
+
+.app .mf-benchmark-controls label,
+.app.app .mf-benchmark-controls label {
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  font-size: 12px !important;
+}
+
+.app .mf-benchmark-controls .fluxa-select,
+.app.app .mf-benchmark-controls .fluxa-select {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 6px 10px !important;
+}
+
+.app .mf-benchmark-controls fieldset,
+.app.app .mf-benchmark-controls fieldset {
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px 12px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Financials — compact metric selection, prevent huge empty area */
+.app .mf-financial-workspace,
+.app.app .mf-financial-workspace,
+.mf-financial-workspace {
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.app .mf-metric-navigation,
+.app.app .mf-metric-navigation {
+  position: sticky !important;
+  top: 12px !important;
+  padding: 12px !important;
+  gap: 4px !important;
+  background: var(--fluxa-surface) !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: var(--fluxa-radius) !important;
+  height: fit-content !important;
+}
+
+.app .mf-financial-toolbar,
+.app.app .mf-financial-toolbar,
+.mf-financial-toolbar.fluxa-card {
+  margin-bottom: 12px !important;
+  padding: 0 !important;
+  gap: 8px !important;
+  background: var(--fluxa-surface) !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: var(--fluxa-radius) !important;
+}
+
+.app .mf-financial-toolbar .fluxa-card-body,
+.app.app .mf-financial-toolbar .fluxa-card-body,
+.mf-financial-toolbar.fluxa-card .fluxa-card-body {
+  padding: 10px 14px !important;
+  gap: 12px !important;
+}
+
+.app .mf-financial-analysis,
+.app.app .mf-financial-analysis,
+.mf-financial-analysis.fluxa-card {
+  padding: 16px !important;
+}
+
+.app .mf-financial-highlights,
+.app.app .mf-financial-highlights,
+.mf-financial-highlights.fluxa-metric-grid {
+  margin-bottom: 16px !important;
+  gap: 12px !important;
+}
+
+@media (max-width: 1200px) {
+  .app .mf-financial-workspace,
+  .app.app .mf-financial-workspace,
+  .mf-financial-workspace {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* ==================================================
+   PATCH 2 FINAL — Consistent Dropdown UI
+   Compare + Financials only — compact, same design system
+   Uses existing tokens, scoped to not affect Patch 1 Overview/Header
+   ================================================== */
+
+/* Base consistent select — Compare Metric, Fiscal Year + Financials Company Scope */
+.app .mf-benchmark-controls .fluxa-select,
+.app.app .mf-benchmark-controls .fluxa-select,
+.mf-benchmark-controls .fluxa-select,
+.app .mf-financial-workspace .fluxa-select,
+.app.app .mf-financial-workspace .fluxa-select,
+.mf-financial-workspace .fluxa-select,
+.mf-metric-navigation .fluxa-select {
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+  padding: 6px 28px 6px 10px !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: 8px !important;
+  background: white !important;
+  background-color: white !important;
+  color: var(--fluxa-text-primary) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.1px !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease !important;
+  vertical-align: middle !important;
+}
+
+/* Hover — same as fluxa-filter-btn */
+.app .mf-benchmark-controls .fluxa-select:hover,
+.app.app .mf-benchmark-controls .fluxa-select:hover,
+.mf-benchmark-controls .fluxa-select:hover,
+.app .mf-financial-workspace .fluxa-select:hover,
+.app.app .mf-financial-workspace .fluxa-select:hover,
+.mf-financial-workspace .fluxa-select:hover,
+.mf-metric-navigation .fluxa-select:hover {
+  border-color: var(--fluxa-border-strong) !important;
+  background: white !important;
+  background-color: white !important;
+  color: var(--fluxa-text-primary) !important;
+}
+
+/* Focus — same as existing fluxa-select:focus */
+.app .mf-benchmark-controls .fluxa-select:focus,
+.app.app .mf-benchmark-controls .fluxa-select:focus,
+.mf-benchmark-controls .fluxa-select:focus,
+.app .mf-financial-workspace .fluxa-select:focus,
+.app.app .mf-financial-workspace .fluxa-select:focus,
+.mf-financial-workspace .fluxa-select:focus,
+.mf-metric-navigation .fluxa-select:focus {
+  outline: none !important;
+  border-color: var(--fi-focus) !important;
+  box-shadow: 0 0 0 3px var(--fi-accent-tint) !important;
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Ensure label container for Financials matches Compare flex-column pattern */
+.app .mf-metric-navigation label,
+.app.app .mf-metric-navigation label,
+.mf-metric-navigation label {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--fluxa-text-secondary) !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* Keep the Companies fieldset label inner (checkboxes) as row, not column */
+.app .mf-benchmark-controls fieldset label,
+.app.app .mf-benchmark-controls fieldset label,
+.mf-benchmark-controls fieldset label {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--fluxa-text-primary) !important;
+  margin: 0 !important;
+  pointer-events: auto !important;
+}
+
+/* ==================================================
+   REGRESSION FIX — Restore dropdown functionality
+   Common cause: label display:flex breaks native select
+   Also Overview custom menu clipped by overflow:hidden
+   ================================================== */
+
+/* Restore pointer interaction for all selects */
+.app .mf-benchmark-controls .fluxa-select,
+.app.app .mf-benchmark-controls .fluxa-select,
+.mf-benchmark-controls .fluxa-select,
+.app .mf-financial-workspace .fluxa-select,
+.app.app .mf-financial-workspace .fluxa-select,
+.mf-financial-workspace .fluxa-select,
+.mf-metric-navigation .fluxa-select,
+.fluxa-select {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* FIX Compare labels — use block instead of flex to restore native select opening
+   Preserves compact visual via margin-top on select */
+.app .mf-benchmark-controls label,
+.app.app .mf-benchmark-controls label {
+  display: block !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--fluxa-text-secondary) !important;
+  pointer-events: auto !important;
+  width: auto !important;
+}
+
+.app .mf-benchmark-controls label .fluxa-select,
+.app.app .mf-benchmark-controls label .fluxa-select {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  pointer-events: auto !important;
+}
+
+/* FIX Financials label — same: block not flex */
+.app .mf-metric-navigation label,
+.app.app .mf-metric-navigation label,
+.mf-metric-navigation label {
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--fluxa-text-secondary) !important;
+  margin: 0 !important;
+  width: 100% !important;
+  pointer-events: auto !important;
+}
+
+.app .mf-metric-navigation label .fluxa-select,
+.app.app .mf-metric-navigation label .fluxa-select,
+.mf-metric-navigation label .fluxa-select {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure fieldset and checkbox labels remain interactive */
+.app .mf-benchmark-controls fieldset,
+.app.app .mf-benchmark-controls fieldset {
+  pointer-events: auto !important;
+}
+
+.app .mf-benchmark-controls fieldset input[type="checkbox"],
+.app.app .mf-benchmark-controls fieldset input[type="checkbox"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* FIX Overview Revenue Performance custom menu — prevent clipping by overflow:hidden */
+.app .fluxa-card,
+.app.app .fluxa-card,
+.fluxa-card {
+  overflow: visible !important;
+}
+
+.app .fluxa-card-header,
+.app.app .fluxa-card-header,
+.fluxa-card-header {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.app .fluxa-card-actions,
+.app.app .fluxa-card-actions,
+.fluxa-card-actions {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 5 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure the custom year menu is on top and interactive */
+.app .fluxa-card-actions [role="menu"],
+.app.app .fluxa-card-actions [role="menu"],
+.fluxa-card-actions [role="menu"] {
+  z-index: 50 !important;
+  pointer-events: auto !important;
+  position: absolute !important;
+}
+
+.app .fluxa-card-actions .fluxa-filter-btn,
+.app.app .fluxa-card-actions .fluxa-filter-btn,
+.fluxa-card-actions .fluxa-filter-btn {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 6 !important;
+}
+
+/* Ensure top filter buttons remain clickable and menus visible */
+.fluxa-filters,
+.fluxa-filters .fluxa-filter-btn {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.fluxa-filters {
+  overflow: visible !important;
+  z-index: 15 !important;
+}
+
+.fluxa-filters > div {
+  overflow: visible !important;
+  position: relative !important;
+}
+
+.fluxa-filters [role="menu"] {
+  z-index: 60 !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+}
+
+/* Ensure no transparent overlay blocks interaction in main areas */
+.fluxa-main,
+.mf-benchmark,
+.mf-benchmark-controls,
+.mf-financial-workspace,
+.mf-financial-toolbar,
+.mf-metric-navigation,
+.mf-overview {
+  pointer-events: auto !important;
+}
+
+/* ==================================================
+   PATCH 3 — Evidence + Evaluation UI Only
+   Scoped to evidence/evaluation classes, no impact on Patch 1/2
+   ================================================== */
+
+/* Evidence — polished lookup card */
+.fluxa-evidence-workspace .fluxa-evidence-lookup-card {
+  overflow: visible !important;
+}
+.fluxa-evidence-workspace .mf-audit-lookup.fluxa-evidence-lookup-card .fluxa-card-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  overflow: visible !important;
+}
+.fluxa-evidence-workspace .mf-audit-lookup.fluxa-evidence-lookup-card .fluxa-card-body {
+  padding: 16px !important;
+}
+.fluxa-evidence-workspace .mf-audit-lookup input.fluxa-input {
+  height: 36px !important;
+  min-height: 36px !important;
+  font-size: 13px !important;
+}
+.fluxa-evidence-workspace .mf-audit-records .fluxa-card-header,
+.fluxa-evidence-workspace .mf-audit-document .fluxa-card-body {
+  overflow: visible !important;
+}
+
+/* Evidence — opened records polish */
+.fluxa-evidence-workspace .mf-audit-records {
+  background: white !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: var(--fluxa-radius) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+.fluxa-evidence-workspace .mf-audit-records .fluxa-card-header {
+  padding: 14px 16px !important;
+  background: white !important;
+  border-bottom: 1px solid var(--fluxa-border-subtle) !important;
+}
+.fluxa-evidence-workspace .mf-audit-records .fluxa-card-body {
+  padding: 12px 14px !important;
+}
+.fluxa-evidence-workspace .mf-audit-record {
+  border: 1px solid var(--fluxa-border-subtle) !important;
+  background: white !important;
+  border-radius: 8px !important;
+  transition: border-color 120ms ease, background 120ms ease !important;
+  margin-top: 0 !important;
+}
+.fluxa-evidence-workspace .mf-audit-record:hover {
+  border-color: var(--fluxa-border-strong) !important;
+  background: var(--fi-surface-muted) !important;
+}
+.fluxa-evidence-workspace .mf-audit-record.selected {
+  border-color: var(--fi-accent) !important;
+  background: var(--fi-accent-tint) !important;
+}
+
+/* Evidence — document polish */
+.fluxa-evidence-workspace .mf-audit-document {
+  background: white !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: var(--fluxa-radius) !important;
+  overflow: hidden !important;
+}
+.fluxa-evidence-workspace .mf-audit-document .fluxa-card-body {
+  padding: 16px !important;
+}
+.fluxa-evidence-workspace .mf-audit-source-strip {
+  background: var(--fi-surface-muted) !important;
+  border: 1px solid var(--fi-border-subtle) !important;
+  border-radius: 8px !important;
+}
+.fluxa-evidence-workspace .mf-audit-passage {
+  background: var(--fi-surface-muted) !important;
+  border-left: 3px solid var(--fi-accent) !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* Evaluation — polished intentional dashboard */
+.mf-quality .fluxa-eval-intent-card {
+  background: white !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+.mf-quality .fluxa-eval-status-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-bottom: 12px !important;
+}
+.mf-quality .fluxa-eval-card {
+  background: white !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: border-color 120ms ease, box-shadow 120ms ease !important;
+}
+.mf-quality .fluxa-eval-card:hover {
+  border-color: var(--fluxa-border-strong) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+.mf-quality .fluxa-eval-card .fluxa-card-header {
+  padding: 12px 14px !important;
+  background: white !important;
+  border-bottom: 1px solid var(--fluxa-border-subtle) !important;
+  overflow: visible !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+.mf-quality .fluxa-eval-card .fluxa-card-body {
+  padding: 12px 14px !important;
+  display: grid !important;
+  gap: 10px !important;
+  flex: 1 !important;
+}
+.mf-quality .fluxa-eval-card .mf-fineprint {
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  color: var(--fi-text-tertiary) !important;
+  margin: 0 !important;
+  padding-top: 8px !important;
+  border-top: 1px dashed var(--fi-border-subtle) !important;
+}
+
+@media (max-width: 1100px) {
+  .mf-quality .fluxa-eval-status-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Evaluation — keep existing banner and other sections untouched, only polish unexecuted */
+.mf-quality .mf-quality-banner {
+  background: white !important;
+  border: 1px solid var(--fluxa-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+.mf-quality .mf-quality-empty {
+  gap: 12px !important;
+}
+
+
+
+/* ==================================================
+   PATCH 4 — Dark/Light Mode — Comprehensive, Preserve Accents
+   Fixes remaining white surfaces in Compare, Filings, Financials
+   ================================================== */
+
+:root[data-theme="dark"] {
+  --fi-canvas: #0f0f11;
+  --fi-surface: #1a1a1e;
+  --fi-surface-muted: #232326;
+  --fi-surface-inset: #2c2c30;
+  --fi-border-subtle: #2a2a2e;
+  --fi-border: #3a3a40;
+  --fi-border-strong: #52525b;
+  --fi-text-primary: #f4f4f5;
+  --fi-text-secondary: #a1a1aa;
+  --fi-text-tertiary: #71717b;
+  --fi-action: #f4f4f5;
+  --fi-action-hover: #e4e4e7;
+  --fi-accent: #6b7cff;
+  --fi-accent-tint: #1e223f;
+  --fi-focus: #818cf8;
+  --fi-positive: #22c55e;
+  --fi-positive-soft: #162a1c;
+  --fi-negative: #ef4444;
+  --fi-negative-soft: #2a1a1c;
+  --fi-warning: #fbbf24;
+  --fi-warning-soft: #2a2312;
+  --fi-info: #60a5fa;
+  --fi-info-soft: #1a2332;
+  --fi-evidence: #2dd4bf;
+  --fi-evidence-soft: #132e2b;
+  --fi-research: #a1a1aa;
+  --fi-research-soft: #27272a;
+  --fi-neutral: #a1a1aa;
+  --fi-neutral-soft: #27272a;
+  --fi-company-aapl: #7c8cff;
+  --fi-company-msft: #2dd4bf;
+  --fi-company-amzn: #fbbf24;
+}
+
+/* Base dark */
+[data-theme="dark"] body {
+  background: var(--fi-canvas) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-page {
+  background: var(--fi-canvas) !important;
+}
+[data-theme="dark"] .fluxa-shell {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.4) !important;
+}
+[data-theme="dark"] .fluxa-header {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-logo {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-logo-mark {
+  background: var(--fi-text-primary) !important;
+  color: var(--fi-canvas) !important;
+}
+[data-theme="dark"] .fluxa-nav {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-nav button {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-nav button:hover {
+  background: var(--fi-surface-inset) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-nav button.active {
+  background: var(--fi-accent) !important;
+  color: white !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+}
+[data-theme="dark"] .fluxa-header-right {
+  background: transparent !important;
+}
+[data-theme="dark"] .fluxa-search,
+[data-theme="dark"] .app .fluxa-search,
+[data-theme="dark"] .app.app .fluxa-search {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-search:hover {
+  background: var(--fi-surface-inset) !important;
+  border-color: var(--fi-border-strong) !important;
+}
+[data-theme="dark"] .fluxa-search input,
+[data-theme="dark"] .app .fluxa-search input,
+[data-theme="dark"] .app.app .fluxa-search input {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-search kbd,
+[data-theme="dark"] .app .fluxa-search kbd {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .fluxa-icon-btn {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-icon-btn:hover {
+  background: var(--fi-surface-inset) !important;
+  color: var(--fi-text-primary) !important;
+  border-color: var(--fi-border-strong) !important;
+}
+[data-theme="dark"] .fluxa-user {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-user-mark {
+  background: var(--fi-text-primary) !important;
+  color: var(--fi-canvas) !important;
+}
+
+/* Cards and surfaces */
+[data-theme="dark"] .fluxa-card,
+[data-theme="dark"] .fluxa-kpi,
+[data-theme="dark"] .fluxa-ai,
+[data-theme="dark"] .mf-surface,
+[data-theme="dark"] .mf-company-snapshots article,
+[data-theme="dark"] .mf-metric-navigation,
+[data-theme="dark"] .mf-library,
+[data-theme="dark"] .fluxa-research-result,
+[data-theme="dark"] .mf-library-header.fluxa-card,
+[data-theme="dark"] .mf-financial-toolbar.fluxa-card,
+[data-theme="dark"] .mf-benchmark-controls.fluxa-card,
+[data-theme="dark"] .mf-financial-analysis.fluxa-card {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-card-header {
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-card:hover,
+[data-theme="dark"] .fluxa-kpi:hover {
+  border-color: var(--fi-border-strong) !important;
+}
+[data-theme="dark"] .fluxa-kpi-arrow,
+[data-theme="dark"] .fluxa-kpi-arrow.fluxa-icon-btn {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .fluxa-kpi-arrow:hover {
+  background: var(--fi-surface-inset) !important;
+  color: var(--fi-text-primary) !important;
+}
+
+/* Badges preserve semantic */
+[data-theme="dark"] .fluxa-badge.green {
+  background: var(--fi-positive-soft) !important;
+  color: var(--fi-positive) !important;
+  border-color: transparent !important;
+}
+[data-theme="dark"] .fluxa-badge.red {
+  background: var(--fi-negative-soft) !important;
+  color: var(--fi-negative) !important;
+  border-color: transparent !important;
+}
+[data-theme="dark"] .fluxa-badge.blue {
+  background: var(--fi-info-soft) !important;
+  color: var(--fi-info) !important;
+  border-color: transparent !important;
+}
+[data-theme="dark"] .fluxa-badge.neutral {
+  background: var(--fi-neutral-soft) !important;
+  color: var(--fi-neutral) !important;
+  border-color: var(--fi-border) !important;
+}
+
+/* Inputs and selects - dark */
+[data-theme="dark"] .fluxa-input,
+[data-theme="dark"] .fluxa-select,
+[data-theme="dark"] .app .mf-benchmark-controls .fluxa-select,
+[data-theme="dark"] .app.app .mf-benchmark-controls .fluxa-select,
+[data-theme="dark"] .mf-benchmark-controls .fluxa-select,
+[data-theme="dark"] .app .mf-financial-workspace .fluxa-select,
+[data-theme="dark"] .app.app .mf-financial-workspace .fluxa-select,
+[data-theme="dark"] .mf-financial-workspace .fluxa-select,
+[data-theme="dark"] .mf-metric-navigation .fluxa-select,
+[data-theme="dark"] .app.app input:not([type="checkbox"]):not([type="radio"]),
+[data-theme="dark"] .app.app select,
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: var(--fi-surface) !important;
+  background-color: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-input:focus,
+[data-theme="dark"] .fluxa-select:focus,
+[data-theme="dark"] .app .mf-benchmark-controls .fluxa-select:focus,
+[data-theme="dark"] .mf-benchmark-controls .fluxa-select:focus,
+[data-theme="dark"] .mf-financial-workspace .fluxa-select:focus,
+[data-theme="dark"] .mf-metric-navigation .fluxa-select:focus,
+[data-theme="dark"] .app.app input:focus,
+[data-theme="dark"] .app.app select:focus {
+  border-color: var(--fi-focus) !important;
+  box-shadow: 0 0 0 3px var(--fi-accent-tint) !important;
+  background: var(--fi-surface) !important;
+  background-color: var(--fi-surface) !important;
+}
+[data-theme="dark"] .fluxa-input::placeholder,
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] select option {
+  background: var(--fi-surface) !important;
+  color: var(--fi-text-primary) !important;
+}
+
+/* Filter buttons - dark */
+[data-theme="dark"] .fluxa-filter-btn {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-filter-btn:hover {
+  background: var(--fi-surface-inset) !important;
+  border-color: var(--fi-border-strong) !important;
+  color: var(--fi-text-primary) !important;
+}
+
+/* Tabs */
+[data-theme="dark"] .fluxa-tabs {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-tab {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-tab.active {
+  background: var(--fi-surface-inset) !important;
+  color: var(--fi-text-primary) !important;
+  border-color: var(--fi-border) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+}
+[data-theme="dark"] .fluxa-tab:hover:not(.active) {
+  color: var(--fi-text-primary) !important;
+}
+
+/* Buttons preserve accent */
+[data-theme="dark"] .fluxa-btn-primary {
+  background: var(--fi-accent) !important;
+  color: white !important;
+  border-color: var(--fi-accent) !important;
+}
+[data-theme="dark"] .fluxa-btn-primary:hover {
+  background: var(--fi-focus) !important;
+  border-color: var(--fi-focus) !important;
+}
+[data-theme="dark"] .fluxa-btn-secondary {
+  background: var(--fi-surface) !important;
+  color: var(--fi-text-primary) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-btn-secondary:hover {
+  background: var(--fi-surface-inset) !important;
+  border-color: var(--fi-border-strong) !important;
+}
+[data-theme="dark"] .fluxa-get-plus {
+  background: var(--fi-accent) !important;
+  color: white !important;
+}
+[data-theme="dark"] .fluxa-get-plus:hover {
+  background: var(--fi-focus) !important;
+}
+[data-theme="dark"] .fluxa-btn-ghost {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-btn-ghost:hover {
+  background: var(--fi-surface-muted) !important;
+  color: var(--fi-text-primary) !important;
+}
+
+/* Tables - CRITICAL FIX for Filings and Financials white rows */
+[data-theme="dark"] .fluxa-table,
+[data-theme="dark"] .mf-table {
+  background: var(--fi-surface) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-table thead th,
+[data-theme="dark"] .mf-table thead th,
+[data-theme="dark"] .app.app .mf-table thead th {
+  background: var(--fi-surface-muted) !important;
+  background-color: var(--fi-surface-muted) !important;
+  color: var(--fi-text-tertiary) !important;
+  border-bottom-color: var(--fi-border) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-table tbody td,
+[data-theme="dark"] .fluxa-table tbody th,
+[data-theme="dark"] .mf-table tbody td,
+[data-theme="dark"] .mf-table tbody th,
+[data-theme="dark"] .app.app .mf-table tbody td,
+[data-theme="dark"] .app.app .mf-table tbody th {
+  background: var(--fi-surface) !important;
+  background-color: var(--fi-surface) !important;
+  color: var(--fi-text-primary) !important;
+  border-bottom-color: var(--fi-border-subtle) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-table tbody tr:hover,
+[data-theme="dark"] .mf-table tbody tr:hover {
+  background: var(--fi-surface-inset) !important;
+  background-color: var(--fi-surface-inset) !important;
+}
+[data-theme="dark"] .fluxa-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+[data-theme="dark"] .fluxa-table-wrap,
+[data-theme="dark"] .table-wrap {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-library {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-library-filters {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-library-table {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-filing-title strong {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .mf-filing-title span {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .mf-filing-actions a {
+  color: var(--fi-accent) !important;
+}
+
+/* Financials Annual Values */
+[data-theme="dark"] .mf-annual-table.fluxa-card,
+[data-theme="dark"] .mf-annual-table {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-annual-table .fluxa-card-header {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-exact-toggle {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .mf-fineprint {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .mf-financial-workspace {
+  background: transparent !important;
+}
+[data-theme="dark"] .mf-financial-highlights .fluxa-metric,
+[data-theme="dark"] .fluxa-metric {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-metric-navigation button {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .mf-metric-navigation button:hover {
+  background: var(--fi-surface-muted) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .mf-metric-navigation button.selected {
+  background: var(--fi-accent) !important;
+  color: white !important;
+}
+
+/* Compare specific */
+[data-theme="dark"] .mf-benchmark-controls {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls fieldset {
+  border-color: var(--fi-border) !important;
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls fieldset legend {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls fieldset label {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .mf-benchmark-layout .fluxa-card,
+[data-theme="dark"] .mf-benchmark-reading.fluxa-card {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-ranking-row {
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-ranking-track {
+  background: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-comparison-action {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-ranking-missing {
+  border-color: var(--fi-border-subtle) !important;
+}
+
+/* Dropdown menus */
+[data-theme="dark"] [role="menu"] {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
+}
+[data-theme="dark"] [role="menu"] .fluxa-command-item {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] [role="menu"] .fluxa-command-item:hover {
+  background: var(--fi-surface-muted) !important;
+}
+
+/* Cashflow and expense */
+[data-theme="dark"] .fluxa-cashflow-row {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-expense-bar {
+  background: var(--fi-border-subtle) !important;
+}
+
+/* Charts preserve */
+[data-theme="dark"] .fluxa-bar {
+  background: repeating-linear-gradient(45deg, #232326, #232326 2px, #3a3a40 2px, #3a3a40 4px) !important;
+}
+[data-theme="dark"] .fluxa-bar.active {
+  background: linear-gradient(180deg, var(--fi-accent) 0%, #4a5cc5 100%) !important;
+  box-shadow: 0 4px 12px rgba(107,124,255,0.35) !important;
+}
+[data-theme="dark"] .fluxa-mini-bar {
+  background: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-mini-bar.active {
+  background: linear-gradient(180deg, var(--fi-accent) 0%, #4a5cc5 100%) !important;
+}
+[data-theme="dark"] .fluxa-bar-value {
+  background: var(--fi-text-primary) !important;
+  color: var(--fi-canvas) !important;
+}
+[data-theme="dark"] .fluxa-bar-value::after {
+  border-top-color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-company-logo {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-status-pill.success {
+  background: var(--fi-positive-soft) !important;
+  color: var(--fi-positive) !important;
+}
+[data-theme="dark"] .fluxa-status-pill.pending {
+  background: var(--fi-warning-soft) !important;
+  color: var(--fi-warning) !important;
+}
+[data-theme="dark"] .fluxa-status-pill.failed {
+  background: var(--fi-negative-soft) !important;
+  color: var(--fi-negative) !important;
+}
+[data-theme="dark"] .fluxa-status-pill.neutral {
+  background: var(--fi-neutral-soft) !important;
+  color: var(--fi-neutral) !important;
+  border-color: var(--fi-border) !important;
+}
+
+/* AI panel */
+[data-theme="dark"] .fluxa-ai-input {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-ai-input:focus-within {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-focus) !important;
+  box-shadow: 0 0 0 3px var(--fi-accent-tint) !important;
+}
+[data-theme="dark"] .fluxa-ai-input input,
+[data-theme="dark"] .fluxa-ai-input textarea {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-ai-message.assistant {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-ai-message.user {
+  background: var(--fi-accent-tint) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-ai-suggestion {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-ai-suggestion:hover {
+  background: var(--fi-surface-inset) !important;
+  border-color: var(--fi-border-strong) !important;
+  color: var(--fi-text-primary) !important;
+}
+
+/* Command dialog */
+[data-theme="dark"] .fluxa-command-dialog,
+[data-theme="dark"] .navigation-dialog,
+[data-theme="dark"] .command-dialog {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-command-header {
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-command-item {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-command-item:hover {
+  background: var(--fi-surface-muted) !important;
+}
+[data-theme="dark"] .fluxa-command-item small {
+  color: var(--fi-text-secondary) !important;
+}
+
+/* Evidence/Evaluation */
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-records,
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-document,
+[data-theme="dark"] .mf-quality .fluxa-eval-card,
+[data-theme="dark"] .mf-quality .fluxa-eval-intent-card,
+[data-theme="dark"] .mf-quality .mf-quality-banner {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-records .fluxa-card-header,
+[data-theme="dark"] .mf-quality .fluxa-eval-card .fluxa-card-header {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-source-strip,
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-passage {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-record {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-record:hover {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-strong) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-record.selected {
+  background: var(--fi-accent-tint) !important;
+  border-color: var(--fi-accent) !important;
+}
+
+/* Greeting, filters, footer */
+[data-theme="dark"] .fluxa-greeting h1 {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-greeting p {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-footer {
+  border-color: var(--fi-border-subtle) !important;
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .fluxa-loading {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .fluxa-notice.info {
+  background: var(--fi-info-soft) !important;
+  border-color: #2a3a5a !important;
+  color: var(--fi-info) !important;
+}
+[data-theme="dark"] .fluxa-notice.warning {
+  background: var(--fi-warning-soft) !important;
+  border-color: #4a3a1a !important;
+  color: var(--fi-warning) !important;
+}
+[data-theme="dark"] .fluxa-notice.danger {
+  background: var(--fi-negative-soft) !important;
+  border-color: #4a1a1c !important;
+  color: var(--fi-negative) !important;
+}
+
+/* Fix hard-coded light values in style.css legacy */
+[data-theme="dark"] .app.app .panel,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .kpi,
+[data-theme="dark"] .app.app :is(.panel, .mf-surface) {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] table,
+[data-theme="dark"] .table-wrap {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] thead th {
+  background: var(--fi-surface-muted) !important;
+  background-color: var(--fi-surface-muted) !important;
+  color: var(--fi-text-tertiary) !important;
+  border-color: var(--fi-border) !important;
+  border-bottom-color: var(--fi-border) !important;
+}
+[data-theme="dark"] tbody td,
+[data-theme="dark"] tbody th {
+  background: var(--fi-surface) !important;
+  background-color: var(--fi-surface) !important;
+  color: var(--fi-text-primary) !important;
+  border-color: var(--fi-border-subtle) !important;
+  border-bottom-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] tbody tr:hover {
+  background: var(--fi-surface-inset) !important;
+  background-color: var(--fi-surface-inset) !important;
+}
+[data-theme="dark"] dt {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] dd {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] summary {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] pre {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .detail-grid,
+[data-theme="dark"] .mf-system-state-grid {
+  background: transparent !important;
+}
+[data-theme="dark"] .mf-system-state-grid div {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-financial-provenance,
+[data-theme="dark"] .fluxa-disclosure {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-financial-provenance section[style*="background"] {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-audit-document-title h2,
+[data-theme="dark"] .mf-methodology h2,
+[data-theme="dark"] .fluxa-card-header h2,
+[data-theme="dark"] .fluxa-card-header h3 {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] [style*="background: white"],
+[data-theme="dark"] [style*="background:white"],
+[data-theme="dark"] [style*="background: #fff"],
+[data-theme="dark"] [style*="background:#fff"] {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] [style*="background: var(--fi-surface-muted)"] {
+  background: var(--fi-surface-muted) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls fieldset label:has(input:checked) {
+  background: var(--fi-accent-tint) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .mf-library-company-filters.fluxa-tabs {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .mf-library-header.fluxa-card .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-financial-toolbar.fluxa-card .fluxa-card-body,
+[data-theme="dark"] .mf-benchmark-controls.fluxa-card .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-financial-analysis.fluxa-card .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-methodology-intro.fluxa-card .fluxa-card-body,
+[data-theme="dark"] .mf-quality .fluxa-eval-card .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-lookup.fluxa-evidence-lookup-card {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-lookup .fluxa-card-header {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border-subtle) !important;
+}
+[data-theme="dark"] .fluxa-evidence-workspace .mf-audit-lookup .fluxa-card-body {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-audit-workspace .fluxa-evidence-workspace,
+[data-theme="dark"] .mf-financial-analysis .fluxa-card-body,
+[data-theme="dark"] .fluxa-card-body {
+  background: transparent !important;
+}
+[data-theme="dark"] .mf-company-identity strong {
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .mf-company-identity small {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .mf-filing-title .fluxa-company-logo {
+  background: var(--fi-surface-muted) !important;
+  border-color: var(--fi-border) !important;
+}
+[data-theme="dark"] .mf-exact-toggle input[type="checkbox"] {
+  accent-color: var(--fi-accent) !important;
+}
+[data-theme="dark"] .mf-library-filters .fluxa-input,
+[data-theme="dark"] .mf-library-filters .fluxa-select {
+  background: var(--fi-surface) !important;
+  border-color: var(--fi-border) !important;
+  color: var(--fi-text-primary) !important;
+}
+[data-theme="dark"] .fluxa-table-wrap .fluxa-table {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-overview .fluxa-card,
+[data-theme="dark"] .mf-benchmark .fluxa-card,
+[data-theme="dark"] .mf-library .fluxa-card {
+  background: var(--fi-surface) !important;
+}
+[data-theme="dark"] .mf-benchmark-controls label {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .mf-metric-navigation label {
+  color: var(--fi-text-secondary) !important;
+}
+[data-theme="dark"] .mf-metric-navigation .mf-eyebrow {
+  color: var(--fi-text-tertiary) !important;
+}
+[data-theme="dark"] .mf-financial-toolbar .fluxa-tabs {
+  background: var(--fi-surface-muted) !important;
+}
+[data-theme="dark"] .mf-financial-toolbar .fluxa-tab.active {
+  background: var(--fi-surface-inset) !important;
+}
+
+
+/* PATCH 5 — Methodology visibility safeguard */
+.fluxa-header-left {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+.fluxa-logo {
+  flex-shrink: 0 !important;
+}
+.fluxa-nav {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+.fluxa-nav button {
+  flex-shrink: 0 !important;
+}
+.fluxa-header {
+  min-width: 0 !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+}
+.fluxa-header-right {
+  flex-shrink: 0 !important;
+}
+

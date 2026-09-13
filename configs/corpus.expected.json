@@ -1,0 +1,110 @@
+[
+  {
+    "company": "Apple",
+    "ticker": "AAPL",
+    "cik": "0000320193",
+    "fiscal_year": 2022,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Apple",
+    "ticker": "AAPL",
+    "cik": "0000320193",
+    "fiscal_year": 2023,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Apple",
+    "ticker": "AAPL",
+    "cik": "0000320193",
+    "fiscal_year": 2024,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Microsoft",
+    "ticker": "MSFT",
+    "cik": "0000789019",
+    "fiscal_year": 2022,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Microsoft",
+    "ticker": "MSFT",
+    "cik": "0000789019",
+    "fiscal_year": 2023,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Microsoft",
+    "ticker": "MSFT",
+    "cik": "0000789019",
+    "fiscal_year": 2024,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "cik": "0001018724",
+    "fiscal_year": 2022,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "cik": "0001018724",
+    "fiscal_year": 2023,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  },
+  {
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "cik": "0001018724",
+    "fiscal_year": 2024,
+    "filing_type": "10-K",
+    "accession_number": null,
+    "filing_date": null,
+    "reporting_period": null,
+    "source_url": null,
+    "status": "unresolved_until_SEC_acquisition"
+  }
+]
