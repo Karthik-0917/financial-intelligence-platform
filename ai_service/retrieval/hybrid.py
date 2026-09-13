@@ -50,15 +50,21 @@ def _expand_query(original: str) -> str:
 
     # Business description -> Item 1 Business (add more context terms)
     if "business description" in lower:
-        expansions.append("Item 1 Business Company Background products services operations")
+        expansions.append(
+            "Item 1 Business Company Background products services operations"
+        )
 
     # Cloud business -> Business + MD&A + cloud terms
     if "cloud" in lower and "business" in lower:
-        expansions.append("Item 1 Business Item 7 Management Discussion cloud services Azure AWS")
+        expansions.append(
+            "Item 1 Business Item 7 Management Discussion cloud services Azure AWS"
+        )
 
     # Supply chain risks -> Risk Factors + supply chain
     if "supply chain" in lower:
-        expansions.append("Item 1A Risk Factors supply chain suppliers manufacturing outsourcing partners")
+        expansions.append(
+            "Item 1A Risk Factors supply chain suppliers manufacturing outsourcing partners"
+        )
 
     # Climate-related risks
     if "climate" in lower:
@@ -69,11 +75,25 @@ def _expand_query(original: str) -> str:
         expansions.append("Item 1A Risk Factors competition competitive market")
 
     # Generic risk -> ensure Risk Factors present if not already
-    if "risk" in lower and "risk factor" not in lower and "Item 1A" not in " ".join(expansions):
+    if (
+        "risk" in lower
+        and "risk factor" not in lower
+        and "Item 1A" not in " ".join(expansions)
+    ):
         expansions.append("Item 1A Risk Factors")
 
     # Generic business -> boost Item 1 Business when business mentioned without other specific intents
-    if "business" in lower and not any(k in lower for k in ["risk", "cybersecurity", "supply chain", "climate", "competition", "cloud"]):
+    if "business" in lower and not any(
+        k in lower
+        for k in [
+            "risk",
+            "cybersecurity",
+            "supply chain",
+            "climate",
+            "competition",
+            "cloud",
+        ]
+    ):
         if "Item 1 Business" not in " ".join(expansions):
             expansions.append("Item 1 Business")
 
@@ -118,7 +138,13 @@ def _section_relevance_boost(intents, section: str) -> float:
     boost = 0.0
 
     # Risk factors intent -> boost Item 1A / Risk Factors (stronger after AMZN fix)
-    if "risk_factors" in intents or "risk" in intents or "supply_chain" in intents or "climate" in intents or "competition" in intents:
+    if (
+        "risk_factors" in intents
+        or "risk" in intents
+        or "supply_chain" in intents
+        or "climate" in intents
+        or "competition" in intents
+    ):
         if "risk factor" in sec or "item 1a" in sec:
             boost += 0.25
 
@@ -135,14 +161,29 @@ def _section_relevance_boost(intents, section: str) -> float:
                 boost += 0.35
         elif sec.strip().startswith("item 1") and "business" in sec:
             boost += 0.25
-        elif "item 1" in sec and sec.strip() in {"item 1", "item 1 —", "item 1 — business"}:
+        elif "item 1" in sec and sec.strip() in {
+            "item 1",
+            "item 1 —",
+            "item 1 — business",
+        }:
             boost += 0.20
 
     # Cloud business intent -> boost Business and MD&A (stronger)
     if "cloud_business" in intents or "cloud" in intents:
-        if "business" in sec and "item 1" in sec and "item 1a" not in sec and "item 1b" not in sec and "item 1c" not in sec:
+        if (
+            "business" in sec
+            and "item 1" in sec
+            and "item 1a" not in sec
+            and "item 1b" not in sec
+            and "item 1c" not in sec
+        ):
             boost += 0.25
-        if "item 7" in sec or "md&a" in sec or "management" in sec and "discussion" in sec:
+        if (
+            "item 7" in sec
+            or "md&a" in sec
+            or "management" in sec
+            and "discussion" in sec
+        ):
             boost += 0.20
         if "cloud" in sec:
             boost += 0.15
@@ -155,7 +196,18 @@ def _section_relevance_boost(intents, section: str) -> float:
     # Penalize obviously wrong sections as preference (stronger penalty)
     if "front matter" in sec or sec.strip() == "front matter":
         # Penalize front matter for risk/business intents, but keep as fallback
-        if intents & {"risk_factors", "risk", "business_description", "cybersecurity", "cloud_business", "supply_chain", "climate", "competition", "business", "cloud"}:
+        if intents & {
+            "risk_factors",
+            "risk",
+            "business_description",
+            "cybersecurity",
+            "cloud_business",
+            "supply_chain",
+            "climate",
+            "competition",
+            "business",
+            "cloud",
+        }:
             boost -= 0.35
 
     return boost
@@ -170,9 +222,24 @@ def _is_relevant_section_for_intent(intent, section_lower):
     if intent == "cybersecurity":
         return "item 1c" in section_lower or "cybersecurity" in section_lower
     if intent in {"business_description", "business"}:
-        return "item 1" in section_lower and "business" in section_lower and "item 1a" not in section_lower and "item 1b" not in section_lower and "item 1c" not in section_lower
+        return (
+            "item 1" in section_lower
+            and "business" in section_lower
+            and "item 1a" not in section_lower
+            and "item 1b" not in section_lower
+            and "item 1c" not in section_lower
+        )
     if intent in {"cloud_business", "cloud"}:
-        return ("business" in section_lower and "item 1" in section_lower and "item 1a" not in section_lower) or "item 7" in section_lower or "md&a" in section_lower or "management" in section_lower
+        return (
+            (
+                "business" in section_lower
+                and "item 1" in section_lower
+                and "item 1a" not in section_lower
+            )
+            or "item 7" in section_lower
+            or "md&a" in section_lower
+            or "management" in section_lower
+        )
     return False
 
 
@@ -182,7 +249,18 @@ def _is_wrong_section_for_intent(intent, section_lower):
         return False
     # Front matter is wrong for all our targeted intents when relevant exists
     if "front matter" in section_lower:
-        if intent in {"risk_factors", "risk", "business_description", "business", "cybersecurity", "cloud_business", "supply_chain", "climate", "competition", "cloud"}:
+        if intent in {
+            "risk_factors",
+            "risk",
+            "business_description",
+            "business",
+            "cybersecurity",
+            "cloud_business",
+            "supply_chain",
+            "climate",
+            "competition",
+            "cloud",
+        }:
             return True
     return False
 
@@ -664,7 +742,9 @@ class HybridRetriever:
                 {
                     "chunk_id": chunk["chunk_id"],
                     "score": chunk["reranker_score"],
-                    "original_score": chunk.get("reranker_score_original", chunk["reranker_score"]),
+                    "original_score": chunk.get(
+                        "reranker_score_original", chunk["reranker_score"]
+                    ),
                     "boost": chunk.get("section_boost", 0.0),
                     "section": chunk.get("section", ""),
                 }
@@ -682,7 +762,9 @@ class HybridRetriever:
         # C) Prevent wrong-section being sole evidence when relevant section exists
         # Check ranked (not just eligible) for relevant existence, then filter Front matter from eligible
         # This handles case where relevant exists but below threshold, we still want to avoid Front matter sole evidence
-        for idx, (eligible_group, ranked_group) in enumerate(zip(eligible, ranked, strict=True)):
+        for idx, (eligible_group, ranked_group) in enumerate(
+            zip(eligible, ranked, strict=True)
+        ):
             if not eligible_group:
                 continue
             # Check if any relevant section exists in ranked (broader than eligible)
@@ -737,7 +819,10 @@ class HybridRetriever:
                     promoted = []
                     for chunk in ranked_group:
                         sec_lower = chunk.get("section", "").lower()
-                        if any(_is_relevant_section_for_intent(intent, sec_lower) for intent in intents):
+                        if any(
+                            _is_relevant_section_for_intent(intent, sec_lower)
+                            for intent in intents
+                        ):
                             # Allow lower threshold for relevant sections when Front matter is only alternative
                             if chunk["reranker_score"] >= 0.15:
                                 promoted.append(chunk)

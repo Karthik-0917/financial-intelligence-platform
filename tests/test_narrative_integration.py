@@ -23,30 +23,44 @@ def setup_engine(settings, monkeypatch, text, unknown=False):
         assert question == QUESTION
         assert tickers == ["AAPL"]
         assert years == [2024]
-        return [{
-            "ticker": "AAPL", "fiscal_year": 2024, "filing_type": "10-K",
-            "text": "Synthetic test passage about supplier distress, not a real filing.",
-            "source_url": "https://example.invalid/synthetic",
-        }], {}
+        return [
+            {
+                "ticker": "AAPL",
+                "fiscal_year": 2024,
+                "filing_type": "10-K",
+                "text": "Synthetic test passage about supplier distress, not a real filing.",
+                "source_url": "https://example.invalid/synthetic",
+            }
+        ], {}
 
     engine.retriever = SimpleNamespace(
-        manifest={"corpus_version": "synthetic-test-version"}, retrieve=retrieve,
+        manifest={"corpus_version": "synthetic-test-version"},
+        retrieve=retrieve,
     )
 
     def generate(settings, question, evidence, calculations):
         identifier = evidence[0]["application_metadata"]["evidence_id"]
-        return Synthesis(claims=[{
-            "text": text, "citation_ids": ["unknown" if unknown else identifier],
-        }]), {
-            "provider": "groq", "model": settings.groq_model,
-            "fallback_used": False, "fallback": None,
+        return Synthesis(
+            claims=[
+                {
+                    "text": text,
+                    "citation_ids": ["unknown" if unknown else identifier],
+                }
+            ]
+        ), {
+            "provider": "groq",
+            "model": settings.groq_model,
+            "fallback_used": False,
+            "fallback": None,
         }
 
     monkeypatch.setattr(module, "synthesize", generate)
     return engine
 
 
-def test_apple_reference_narrative_accepted_with_mocked_generation(settings, monkeypatch):
+def test_apple_reference_narrative_accepted_with_mocked_generation(
+    settings, monkeypatch
+):
     text = "Apple's 2024 10-K discusses supplier distress as a supply-chain risk."
     engine = setup_engine(settings, monkeypatch, text)
     result = engine.query(Query(question=QUESTION, tickers=[], years=[]))
@@ -64,14 +78,17 @@ def test_apple_reference_narrative_accepted_with_mocked_generation(settings, mon
     assert engine.registry.get(result.citation_ids[0]) == result.evidence[0]
 
 
-@pytest.mark.parametrize("text", [
-    "Revenue increased by 12%.",
-    "Revenue increased by twelve percent.",
-    "Assets doubled.",
-    "Net income declined by half.",
-    "Revenue grew three times.",
-    "See HTTP://example.com.",
-])
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Revenue increased by 12%.",
+        "Revenue increased by twelve percent.",
+        "Assets doubled.",
+        "Net income declined by half.",
+        "Revenue grew three times.",
+        "See HTTP://example.com.",
+    ],
+)
 def test_rejected_prose_preserves_received_provider_trace(settings, monkeypatch, text):
     engine = setup_engine(settings, monkeypatch, text)
     result = engine.query(Query(question=QUESTION))
@@ -83,25 +100,36 @@ def test_rejected_prose_preserves_received_provider_trace(settings, monkeypatch,
     assert len(result.evidence) == 1
     assert result.trace["llm"]["response_provider"] == "groq"
     assert result.trace["llm"]["status"] == "response_rejected"
-    assert result.trace["llm"]["failure_category"] == "application_output_validation_failed"
+    assert (
+        result.trace["llm"]["failure_category"]
+        == "application_output_validation_failed"
+    )
 
 
 def test_unknown_citation_is_still_rejected(settings, monkeypatch):
-    engine = setup_engine(settings, monkeypatch, "Suppliers may face distress.", unknown=True)
+    engine = setup_engine(
+        settings, monkeypatch, "Suppliers may face distress.", unknown=True
+    )
     result = engine.query(Query(question=QUESTION))
     assert result.abstained
     assert "citation" in result.abstention_reason.lower()
 
 
-def test_authoritative_financial_output_does_not_enter_narrative_validator(settings, monkeypatch):
+def test_authoritative_financial_output_does_not_enter_narrative_validator(
+    settings, monkeypatch
+):
     publish_synthetic_financials(settings)
 
     def unexpected(*args, **kwargs):
-        raise AssertionError("Structured output must not use narrative generation/validation")
+        raise AssertionError(
+            "Structured output must not use narrative generation/validation"
+        )
 
     monkeypatch.setattr(module, "synthesize", unexpected)
     monkeypatch.setattr(module, "validate_narrative", unexpected)
-    result = ResearchEngine(settings).query(Query(question="What was Apple's revenue in FY2024?"))
+    result = ResearchEngine(settings).query(
+        Query(question="What was Apple's revenue in FY2024?")
+    )
     assert not result.abstained
     assert result.grounded
     assert result.facts[0]["value"] == "100"

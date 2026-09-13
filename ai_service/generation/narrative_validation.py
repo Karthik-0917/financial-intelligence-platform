@@ -83,7 +83,9 @@ def classify_narrative(text, *, allowed_years=()):
         return NarrativeCategory.AMBIGUOUS
     if any(unicodedata.category(char) in {"Cf", "Cs"} for char in text):
         return NarrativeCategory.AMBIGUOUS
-    if any(unicodedata.category(char) == "Cc" and char not in "\n\r\t" for char in text):
+    if any(
+        unicodedata.category(char) == "Cc" and char not in "\n\r\t" for char in text
+    ):
         return NarrativeCategory.AMBIGUOUS
 
     if any(char.isnumeric() and not char.isdecimal() for char in text):
@@ -124,7 +126,9 @@ def classify_narrative(text, *, allowed_years=()):
     # Account for numeric characters by position; never remove digits from
     # claim text. Unexplained identifiers, quantities and notation fail closed.
     for position, char in enumerate(analysis):
-        if char.isnumeric() and not any(start <= position < end for start, end in spans):
+        if char.isnumeric() and not any(
+            start <= position < end for start, end in spans
+        ):
             return NarrativeCategory.AMBIGUOUS
     return NarrativeCategory.QUALITATIVE_OR_REFERENCE
 

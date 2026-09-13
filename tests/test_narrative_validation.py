@@ -80,10 +80,12 @@ EXTERNAL = [
 
 class NarrativeValidationTests(unittest.TestCase):
     def test_cross_claim_financial_change_is_ambiguous(self):
-        synthesis = SimpleNamespace(claims=[
-            SimpleNamespace(text="Revenue is discussed.", citation_ids=["e"]),
-            SimpleNamespace(text="It increased.", citation_ids=["e"]),
-        ])
+        synthesis = SimpleNamespace(
+            claims=[
+                SimpleNamespace(text="Revenue is discussed.", citation_ids=["e"]),
+                SimpleNamespace(text="It increased.", citation_ids=["e"]),
+            ]
+        )
         with self.assertRaises(ValueError):
             validate_narrative(synthesis, {"e": {"fiscal_year": 2024}}, [2024])
 
@@ -95,10 +97,14 @@ class NarrativeValidationTests(unittest.TestCase):
                 "text": "Synthetic test passage, not actual filing evidence.",
             }
         }
-        synthesis = SimpleNamespace(claims=[SimpleNamespace(
-            text="The FY2024 filing discusses supply-chain risks.",
-            citation_ids=["e"],
-        )])
+        synthesis = SimpleNamespace(
+            claims=[
+                SimpleNamespace(
+                    text="The FY2024 filing discusses supply-chain risks.",
+                    citation_ids=["e"],
+                )
+            ]
+        )
         before = deepcopy(registry)
         text = synthesis.claims[0].text
         validate_narrative(synthesis, registry, [2024])
@@ -107,26 +113,42 @@ class NarrativeValidationTests(unittest.TestCase):
 
     def test_matching_evidence_value_does_not_authorize_prose(self):
         registry = {"e": {"fiscal_year": 2024, "value": "12", "text": "12%"}}
-        synthesis = SimpleNamespace(claims=[SimpleNamespace(
-            text="Revenue increased by 12%.", citation_ids=["e"],
-        )])
+        synthesis = SimpleNamespace(
+            claims=[
+                SimpleNamespace(
+                    text="Revenue increased by 12%.",
+                    citation_ids=["e"],
+                )
+            ]
+        )
         with self.assertRaisesRegex(ValueError, "numeric claims"):
             validate_narrative(synthesis, registry, [2024])
 
     def test_year_must_match_request_and_cited_metadata(self):
-        synthesis = SimpleNamespace(claims=[SimpleNamespace(
-            text="The FY2024 filing discusses risks.", citation_ids=["e"],
-        )])
+        synthesis = SimpleNamespace(
+            claims=[
+                SimpleNamespace(
+                    text="The FY2024 filing discusses risks.",
+                    citation_ids=["e"],
+                )
+            ]
+        )
         for year, requested in [(2023, [2024]), (2024, [2023])]:
             with self.subTest(year=year, requested=requested):
                 with self.assertRaises(ValueError):
-                    validate_narrative(synthesis, {"e": {"fiscal_year": year}}, requested)
+                    validate_narrative(
+                        synthesis, {"e": {"fiscal_year": year}}, requested
+                    )
 
     def test_one_bad_claim_rejects_synthesis_without_mutation(self):
-        synthesis = SimpleNamespace(claims=[
-            SimpleNamespace(text="Suppliers may face distress.", citation_ids=["e"]),
-            SimpleNamespace(text="Assets doubled.", citation_ids=["e"]),
-        ])
+        synthesis = SimpleNamespace(
+            claims=[
+                SimpleNamespace(
+                    text="Suppliers may face distress.", citation_ids=["e"]
+                ),
+                SimpleNamespace(text="Assets doubled.", citation_ids=["e"]),
+            ]
+        )
         before = [claim.text for claim in synthesis.claims]
         with self.assertRaises(ValueError):
             validate_narrative(synthesis, {"e": {"fiscal_year": 2024}}, [2024])
@@ -137,6 +159,7 @@ class NarrativeValidationTests(unittest.TestCase):
 def make_case(text, expected):
     def test(self):
         self.assertEqual(classify_narrative(text, allowed_years=[2023, 2024]), expected)
+
     return test
 
 
@@ -147,7 +170,11 @@ for group, samples, expected in [
     ("external", EXTERNAL, Category.PROHIBITED_EXTERNAL_REFERENCE),
 ]:
     for index, sample in enumerate(samples):
-        setattr(NarrativeValidationTests, f"test_{group}_{index:02}", make_case(sample, expected))
+        setattr(
+            NarrativeValidationTests,
+            f"test_{group}_{index:02}",
+            make_case(sample, expected),
+        )
 
 
 if __name__ == "__main__":
