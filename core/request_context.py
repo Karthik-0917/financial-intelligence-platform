@@ -1,12 +1,3 @@
-"""Request correlation shared by the public and private services.
-
-The public service generates fresh identifiers.
-The private service may accept a valid identifier from the backend.
-
-Context variables propagate into FastAPI's synchronous worker context.
-Direct, non-HTTP engine calls receive a fresh identifier.
-"""
-
 import logging
 import re
 import time

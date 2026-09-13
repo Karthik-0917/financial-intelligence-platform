@@ -1,11 +1,4 @@
 /*
- * Page-specific financial workspace presentation.
- *
- * Protected foundation:
- * - No changes to --sidebar-width or --workspace-padding.
- * - No changes to main-shell margins, main width, or shell breakpoints.
- * - No browser scaling, zoom handling, or centered workspace maximum width.
- *
  * Media queries below adapt only the newly introduced internal compositions.
  */
 

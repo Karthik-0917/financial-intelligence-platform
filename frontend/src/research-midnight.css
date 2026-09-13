@@ -1,6 +1,3 @@
-/* * Research workflow composition.
- * Uses the shared Midnight tokens from midnight.css.
- * No shell width, sidebar breakpoint, or zoom behavior is changed. */
 .app .mf-research-workspace { min-width: 0; color: var(--fi-text-secondary); }
 .app .mf-research-composer { padding: var(--fi-space-24); background: var(--fi-surface); border: 1px solid var(--fi-border); border-radius: var(--fi-radius-panel); margin-bottom: 24px; display: grid; grid-template-columns: minmax(180px, .7fr) minmax(0, 2fr); gap: var(--fi-space-24); }
 .app .mf-research-composer-title { display: grid; align-items: start; flex-wrap: wrap; gap: var(--fi-space-8); margin-bottom: 0; color: var(--fi-research); grid-template-columns: 20px minmax(0, 1fr); align-content: start; }

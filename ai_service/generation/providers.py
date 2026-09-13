@@ -1,16 +1,3 @@
-"""Hosted Groq and explicitly enabled Ollama narrative generation.
-
-The documented Groq configuration remains:
-https://api.groq.com/openai/v1
-
-The installed Groq SDK supplies /openai/v1 in its resource paths.
-The adapter therefore passes the origin, not the API-prefix URL, to
-the SDK. This prevents duplicated /openai/v1 request paths.
-
-No credentials are required during import or provider construction.
-Provider failures expose safe categories, not response bodies or secrets.
-"""
-
 import time
 from abc import ABC, abstractmethod
 from collections.abc import Callable

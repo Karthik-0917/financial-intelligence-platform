@@ -1,9 +1,3 @@
-/*
- * Page-specific Midnight compositions.
- * Protected shell sizing and zoom rules remain unchanged in style.css.
- * This file replaces the use of product.css and workspace.css.
- */
-
 body,
 .app {
   color: var(--mf-text);

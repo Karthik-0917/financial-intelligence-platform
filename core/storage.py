@@ -1,12 +1,3 @@
-"""Portable JSON storage and atomic single-file replacement.
-
-Atomic replacement prevents readers from observing partially written
-individual files. It does not make a collection of files transactional.
-
-digest() retains the project's existing JSON-based hashing behavior for
-artifact-version compatibility. Use sha256_bytes() for original file bytes.
-"""
-
 import hashlib
 import json
 import os

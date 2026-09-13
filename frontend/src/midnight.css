@@ -1,14 +1,3 @@
-/*
- * Midnight Financial Research
- *
- * Authoritative tokens for new mf-* components.
- * Existing shell dimensions and zoom foundation remain in style.css.
- *
- * This file does not change:
- * --sidebar-width, --workspace-padding, main-shell margins,
- * main width, browser scaling, or navigation breakpoints.
- */
-
 html:root {
   --mf-navy: #101d35;
   --mf-navy-raised: #192a47;

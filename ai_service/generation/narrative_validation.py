@@ -1,12 +1,3 @@
-"""Conservative screening of generated prose, not semantic verification.
-
-Financial values must be rendered by the existing application financial
-path. Neither citations nor matching source numbers exempt generated prose.
-Reference recognition covers bounded identifiers only. False negatives and
-false positives remain possible; accepted narrative is semantics-unverified.
-No source text is copied, rewritten, fetched, or used to authorize a quantity.
-"""
-
 import re
 import unicodedata
 from enum import Enum
@@ -104,9 +95,6 @@ def classify_narrative(text, *, allowed_years=()):
     if COMPARISON.search(analysis):
         return NarrativeCategory.AMBIGUOUS
 
-    # Unmeasured financial changes are ambiguous even when modal or split
-    # across sentences. Risk language such as "may affect revenue" remains
-    # eligible; this is deliberately not a general grammatical classifier.
     if FINANCIAL.search(analysis) and MEASURED_CHANGE.search(analysis):
         return NarrativeCategory.AMBIGUOUS
 
@@ -123,8 +111,6 @@ def classify_narrative(text, *, allowed_years=()):
             return NarrativeCategory.AMBIGUOUS
         spans.append(match.span(1))
 
-    # Account for numeric characters by position; never remove digits from
-    # claim text. Unexplained identifiers, quantities and notation fail closed.
     for position, char in enumerate(analysis):
         if char.isnumeric() and not any(
             start <= position < end for start, end in spans

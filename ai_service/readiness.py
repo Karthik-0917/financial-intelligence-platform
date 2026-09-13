@@ -1,12 +1,3 @@
-"""Local readiness inspection without network requests or model loading.
-
-Status describes observable local state. A configured API key does not
-prove authentication. Existing index files do not prove index integrity.
-
-Financial checks validate currently accepted facts, not every possible
-metric and not financial-statement layout.
-"""
-
 from ai_service.financial.resolver import METRICS, FactError
 from ai_service.generation.providers import (
     ProviderError,

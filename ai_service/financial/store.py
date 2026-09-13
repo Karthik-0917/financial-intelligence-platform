@@ -1,15 +1,3 @@
-"""Persisted financial data with mandatory inline reconciliation.
-
-No SEC requests, model calls, or index construction occur here.
-
-A genuinely absent store supports an empty analytics state. Populated
-stores require current policies, matching corpus versions, and independently
-rechecked persisted reconciliation inputs.
-
-Artifacts remain trusted local application inputs. These checks detect
-inconsistency, not an attacker who can rewrite every source artifact.
-"""
-
 from copy import deepcopy
 from datetime import date
 

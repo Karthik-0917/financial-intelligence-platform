@@ -1,13 +1,3 @@
-"""Corpus-bound evaluation with explicit provider-call permission.
-
-Default mode skips narrative/mixed requests.
---allow-llm permits their configured provider calls.
---retrieval-only evaluates reviewed retrieval annotations without generation.
-
-No second retrieval is performed to score a generated answer: its actual
-retrieval trace is used.
-"""
-
 import argparse
 import time
 from collections import Counter

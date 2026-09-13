@@ -1,9 +1,3 @@
-"""Coordinate deterministic financial answers and narrative synthesis.
-
-Trace fields describe application stages, not hidden model reasoning.
-A generated response and an accepted answer are distinct outcomes.
-"""
-
 import logging
 import time
 from dataclasses import asdict

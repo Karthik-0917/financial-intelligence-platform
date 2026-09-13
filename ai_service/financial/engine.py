@@ -1,10 +1,3 @@
-"""Deterministic Decimal arithmetic over explicitly scoped financial inputs.
-
-The store validates source provenance before calling this module.
-This module independently validates arithmetic roles, units, periods,
-entity consistency, signs, and finite numeric values.
-"""
-
 from copy import deepcopy
 from datetime import date
 from decimal import Decimal, DecimalException, localcontext

@@ -1,13 +1,3 @@
-"""Evaluation metrics with explicit eligibility and matching rules.
-
-Malformed ground truth raises ValueError and must be repaired before grading.
-Malformed actual structured output is graded incorrect, not allowed to abort
-an otherwise valid evaluation run.
-
-These checks measure exact structured agreement and citation ID validity.
-They do not establish semantic grounding or narrative correctness.
-"""
-
 import statistics
 from collections import Counter
 from decimal import Decimal, InvalidOperation

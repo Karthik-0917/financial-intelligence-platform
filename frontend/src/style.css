@@ -11,7 +11,7 @@
 }
 
 :root {
-  /* Canonical Phase 4 foundation. Page-specific --mf-* colors remain compatible. */
+  
   --fi-canvas: #F7F7F8;
   --fi-surface: #FFFFFF;
   --fi-surface-muted: #FAFAFB;
@@ -522,9 +522,6 @@ footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* Shared visual architecture: reuse the Phase 4 foundation scope to outrank
- * legacy page compatibility colors. No token remap or page-internal redesign.
- * Shell layout is owned above; research and evaluation retain their own grids. */
 body:has(> #root), .app.app {
   background: var(--fi-canvas);
   color: var(--fi-text-primary);

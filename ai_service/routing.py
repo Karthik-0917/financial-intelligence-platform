@@ -1,13 +1,3 @@
-"""Rule-based research routing with explicit question scope precedence.
-
-Question companies and fiscal years take precedence over generic UI
-selectors. Selectors supply defaults only when the corresponding scope
-is absent from the question.
-
-Ranges expand for factual comparisons. Growth and CAGR use range
-endpoints, matching the current deterministic financial-store interface.
-"""
-
 import re
 from dataclasses import dataclass
 

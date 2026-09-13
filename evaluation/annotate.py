@@ -1,12 +1,3 @@
-"""Export and apply index-bound human relevance annotations.
-
-Export performs local retrieval only. It never calls Groq or Ollama.
-Apply validates reviewer-supplied labels against current source artifacts.
-
-Review completion is a human declaration, not proof of review quality.
-The tool does not infer relevance from retrieval scores.
-"""
-
 import argparse
 from copy import deepcopy
 from datetime import UTC, datetime

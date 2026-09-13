@@ -1,12 +1,3 @@
-"""Authoritative resolution of supported SEC Company Facts metrics.
-
-SEC Company Facts values are already scaled. No additional multiplier
-or inferred sign reversal is applied.
-
-Candidate order selects between equivalent, agreeing concepts only.
-Different financial meanings are not interchangeable fallbacks.
-"""
-
 from copy import deepcopy
 from datetime import date
 from decimal import Decimal, InvalidOperation

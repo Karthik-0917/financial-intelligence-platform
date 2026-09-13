@@ -1,16 +1,4 @@
-/*
- * Focused tests of the actual source implementations in main.tsx/ui.tsx.
- *
- * Uses Node's built-in test runner and the project's existing TypeScript
- * dependency. No React renderer, browser, API, provider, or network is used.
- *
- * TypeScript's AST selects the named declarations. Their original source
- * is transpiled and executed in an isolated VM context. The test does not
- * duplicate the ranking implementation.
- *
- * These tests cover ordering and selection logic, not DOM rendering,
- * chart appearance, or the backend financial calculation engine.
- */
+
 
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';

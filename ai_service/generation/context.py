@@ -1,13 +1,3 @@
-"""Compact provider input and whole-record context budgeting.
-
-Full source and reconciliation provenance stays in application records.
-The provider receives only the metadata needed to identify evidence,
-understand validated financial inputs, and cite application-owned IDs.
-
-Token budgeting uses UTF-8 bytes plus a framing reserve. This is a
-conservative local proxy, not provider token usage or a model tokenizer.
-"""
-
 import json
 import math
 from typing import Any

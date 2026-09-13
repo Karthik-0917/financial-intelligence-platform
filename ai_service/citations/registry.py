@@ -1,12 +1,3 @@
-"""Application-owned evidence identifiers and SQLite persistence.
-
-Database exceptions are converted to safe OSError messages that the
-existing API and orchestration handlers already understand.
-
-Registration is transactional. Records are validated and serialized before
-the transaction begins, and existing evidence is never overwritten.
-"""
-
 import json
 import re
 import sqlite3

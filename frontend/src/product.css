@@ -1,12 +1,3 @@
-/*
- * Consolidated shared product presentation and analyst research layout.
- * Replaces the earlier product.css in full.
- *
- * Protected foundation stays in style.css:
- * shell width variables, main-shell offsets, navigation breakpoints,
- * fluid workspace sizing, and existing zoom behavior.
- */
-
 html:root {
   --product-background: #f7f8f6;
   --product-surface: #ffffff;

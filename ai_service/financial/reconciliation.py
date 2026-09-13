@@ -1,14 +1,3 @@
-"""Strict Company Facts versus filing inline-XBRL reconciliation.
-
-A parsed inline observation is not automatically financial evidence.
-Entity, period, concept, unit, dimensional scope, visibility, and value
-must satisfy this policy.
-
-Exact normalized numeric agreement is required. Decimal precision
-annotations are preserved but do not authorize silently overwriting
-different values or applying an inferred tolerance.
-"""
-
 from copy import deepcopy
 
 from ai_service.financial.resolver import FactError, decimal_value
@@ -32,12 +21,7 @@ def _same_period(context, fact):
 
 
 def reconcile(fact: dict, inline: dict) -> dict:
-    """Return a reconciliation record without mutating either input.
 
-    An unresolved observation for the selected concept blocks automatic
-    acceptance when its context cannot be established. This conservative
-    rule may require manual review even if another observation matches.
-    """
     if not isinstance(fact, dict) or not isinstance(inline, dict):
         raise FactError("Invalid reconciliation inputs")
 

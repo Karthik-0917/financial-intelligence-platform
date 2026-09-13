@@ -1,12 +1,3 @@
-"""Prepare corpus-bound regression references without inventing labels.
-
-Automatically produced financial references are regression references,
-not independently audited gold answers.
-
-Human-reviewed annotations must already declare the current corpus version.
-Existing output is not overwritten unless --overwrite is supplied.
-"""
-
 import argparse
 from copy import deepcopy
 from pathlib import Path

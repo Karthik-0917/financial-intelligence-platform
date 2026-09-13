@@ -1,10 +1,3 @@
-"""Public API transport.
-
-The browser accesses this service only. Retrieval and generation remain
-inside the private AI service. Financial analytics read validated local
-artifacts and do not invoke a language model.
-"""
-
 import json
 from contextlib import asynccontextmanager
 from pathlib import Path

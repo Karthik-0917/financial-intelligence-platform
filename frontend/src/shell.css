@@ -1,6 +1,3 @@
-/* Direct Visual Implementation - Direct Visual Copycat */
-/* This file provides Approved visual language on top of existing foundation tokens */
-
 :root {
   --fluxa-canvas: var(--fi-canvas);
   --fluxa-surface: var(--fi-surface);
@@ -1558,12 +1555,6 @@ body {
   .fluxa-kpi, .fluxa-card { animation: none; }
 }
 
-/* ==================================================
-   PATCH 2 — Compare + Financials UI Correction Only
-   Compact filter areas, preserve Patch 1 Overview
-   ================================================== */
-
-/* Compare — compact filter/control area */
 .app .mf-benchmark,
 .app.app .mf-benchmark {
   gap: 12px !important;
@@ -1683,11 +1674,7 @@ body {
   }
 }
 
-/* ==================================================
-   PATCH 2 FINAL — Consistent Dropdown UI
-   Compare + Financials only — compact, same design system
-   Uses existing tokens, scoped to not affect Patch 1 Overview/Header
-   ================================================== */
+
 
 /* Base consistent select — Compare Metric, Fiscal Year + Financials Company Scope */
 .app .mf-benchmark-controls .fluxa-select,
@@ -1928,10 +1915,7 @@ body {
   pointer-events: auto !important;
 }
 
-/* ==================================================
-   PATCH 3 — Evidence + Evaluation UI Only
-   Scoped to evidence/evaluation classes, no impact on Patch 1/2
-   ================================================== */
+
 
 /* Evidence — polished lookup card */
 .fluxa-evidence-workspace .fluxa-evidence-lookup-card {
@@ -2081,10 +2065,6 @@ body {
 
 
 
-/* ==================================================
-   PATCH 4 — Dark/Light Mode — Comprehensive, Preserve Accents
-   Fixes remaining white surfaces in Compare, Filings, Financials
-   ================================================== */
 
 :root[data-theme="dark"] {
   --fi-canvas: #0f0f11;
@@ -2849,7 +2829,6 @@ body {
 }
 
 
-/* PATCH 5 — Methodology visibility safeguard */
 .fluxa-header-left {
   flex: 1 1 auto !important;
   min-width: 0 !important;
